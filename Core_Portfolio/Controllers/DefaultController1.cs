@@ -8,5 +8,13 @@ namespace Core_Portfolio.Controllers
 		{
 			return View();
 		}
+		 public PartialViewResult HeaderPartial()
+		{
+			return PartialView();
+		}
+		public  PartialViewResult NavBarPartial()
+		{
+			return PartialView();
+		}
 	}
 }
