@@ -11,8 +11,8 @@ namespace EntityLayer.Concrete
 	{
 		[Key]
 		public int FeatureId{ get; set; } 
-		public int Header{ get; set; } 
-		public int Name{ get; set; } 
-		public int Title{ get; set; } 
+		public string Header{ get; set; } 
+		public string Name{ get; set; } 
+		public string Title{ get; set; } 
 	}
 }
