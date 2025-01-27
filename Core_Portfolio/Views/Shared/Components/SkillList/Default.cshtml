@@ -1,0 +1,50 @@
+﻿@using EntityLayer.Concrete
+@model List<Skill>
+
+<div class="section px-3 px-lg-4 pt-5" id="skills">
+    <div class="container-narrow">
+        <div class="text-center mb-5">
+            <h2 class="marker marker-center">Yeteneklerim</h2>
+        </div>
+        <div class="text-center">
+            <p class="mx-auto mb-3" style="max-width:600px">.NET Core ve backend geliştirme alanlarında hızla ilerliyor, her projede yenilikçi çözümler ve güçlü, verimli sistemler inşa etmeye odaklanıyorum.</p>
+        </div>
+
+        <div class="bg-light p-3">
+            <div class="row">
+                <!-- Sol sütun (ID'si çift olanlar) -->
+                <div class="col-md-6">
+                    @foreach (var item in Model.Where(x => x.SkillId % 2 == 0)) // ID'si çift olanlar
+                    {
+                        <div class="py-1">
+                            <div class="d-flex text-small fw-bolder">
+                                <span class="me-auto">@item.Title</span>
+                                <span>@item.Value</span>
+                            </div>
+                            <div class="progress my-1">
+                                <div class="progress-bar bg-primary" role="progressbar" data-aos="zoom-in-right" data-aos-delay="100" data-aos-anchor=".skills-section" style="width: @item.Value%" aria-valuenow="@item.Value" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+                    }
+                </div>
+                <!-- Sağ sütun (ID'si tek olanlar) -->
+                <div class="col-md-6">
+                    @foreach (var item in Model.Where(x => x.SkillId % 2 != 0)) // ID'si tek olanlar
+                    {
+                        <div class="py-1">
+                            <div class="d-flex text-small fw-bolder">
+                                <span class="me-auto">@item.Title</span>
+                                <span>@item.Value</span>
+                            </div>
+                            <div class="progress my-1">
+                                <div class="progress-bar bg-primary" role="progressbar" data-aos="zoom-in-right" data-aos-delay="100" data-aos-anchor=".skills-section" style="width: @item.Value%" aria-valuenow="@item.Value" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
