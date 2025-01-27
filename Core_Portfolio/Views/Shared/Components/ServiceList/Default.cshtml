@@ -1,16 +1,19 @@
 ﻿@using EntityLayer.Concrete
 @model List<Service>
+
+<head>
+    <!-- Diğer head içerikleri -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.3/lottie.min.js"></script>
+</head>
+
 <div class="section px-3 px-lg-4 pt-5" id="services">
     <div class="container-narrow">
         <div class="text-center mb-5">
-
             <h2 class="marker marker-center">Hizmetlerim</h2>
         </div>
-
         <div class="text-center">
             <p class="mx-auto mb-3" style="max-width:600px">ASP.NET ve ASP.NET Core ile modern web teknolojilerini kullanarak, her türlü web sitesi ve uygulama için hızlı, güvenilir ve ölçeklenebilir çözümler sunuyorum.</p>
         </div>
-
         <div class="row py-3">
             @foreach (var x in Model)
             {
@@ -19,8 +22,61 @@
                     <div class="h5">@x.Title</div>
                 </div>
             }
-
         </div>
+
+        <!-- Animation Container -->
+        <div id="services-animation-container"></div>
 
     </div>
 </div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        console.log('Script çalışıyor');  // Debug için
+
+        const container = document.getElementById('services-animation-container');
+        console.log('Container bulundu:', container); // Debug için
+
+        if (!container) {
+            console.error('Animation container bulunamadı');
+            return;
+        }
+
+        if (typeof lottie === 'undefined') {
+            console.error('Lottie kütüphanesi yüklenemedi');
+            return;
+        }
+
+        try {
+            const anim = lottie.loadAnimation({
+                container: container,
+                renderer: 'canvas', // Canvas render kullanımı
+                loop: true,
+                autoplay: true,
+                path: '/Template/Animatione.json' // Animasyon dosyasının yolu
+            });
+
+            anim.addEventListener('data_ready', function() {
+                console.log('Animasyon yüklendi');
+            });
+
+            anim.addEventListener('error', function(err) {
+                console.error('Animasyon hatası:', err);
+            });
+
+        } catch (error) {
+            console.error('Animasyon başlatma hatası:', error);
+        }
+    });
+</script>
+
+
+<style>
+    #services-animation-container {
+        width: 100%;
+        max-width: 600px;
+        height: 230px;
+        margin: 0px auto;
+      
+    }
+</style> 
