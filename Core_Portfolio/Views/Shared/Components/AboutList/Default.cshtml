@@ -1,0 +1,49 @@
+﻿@using EntityLayer.Concrete
+@model List<About>
+
+<div class="section pt-4 px-3 px-lg-4" id="about">
+    <div class="container-narrow">
+        <br />
+        <div class="text-center mb-5">
+            <h2 class="marker marker-center">Hakkımda</h2>
+            </div>
+        @foreach (var x in Model)
+        {
+            <div class="row">
+                <div class="col-md-6">
+                    <h2 class="h4 my-2">@x.Title</h2>
+                    <p>@x.Decsription</p>
+                    <div class="row mt-3">
+                        <div class="col-sm-2">
+                            <div class="pb-1">Yaş:</div>
+                        </div>
+                        <div class="col-sm-10">
+                            <div class="pb-1 fw-bolder">@x.Age</div>
+                        </div>
+                        <div class="col-sm-2">
+                            <div class="pb-1">Email:</div>
+                        </div>
+                        <div class="col-sm-10">
+                            <div class="pb-1 fw-bolder">@x.Mail</div>
+                        </div>
+                        <div class="col-sm-2">
+                            <div class="pb-1">LinkedIn:</div>
+                        </div>
+                        <div class="col-sm-10">
+                            <div class="pb-1 fw-bolder">@x.Phone</div>
+                        </div>
+                        <div class="col-sm-2">
+                            <div class="pb-1">Adres:</div>
+                        </div>
+                        <div class="col-sm-10">
+                            <div class="pb-1 fw-bolder">@x.Address</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-5 offset-md-1" data-aos="fade-left" data-aos-delay="100">
+                    <img class="avatar img-fluid mt-2" src="@x.ImageUrl" width="400" height="400" alt="Melek Demir" />
+                </div>
+            </div>
+        }
+    </div>
+</div>
