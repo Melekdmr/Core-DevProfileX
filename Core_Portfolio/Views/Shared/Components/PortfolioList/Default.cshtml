@@ -1,33 +1,205 @@
 ﻿@using EntityLayer.Concrete
 @model List<Portfolio>
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
 
 
 <div class="section px-2 px-lg-4 pt-5" id="portfolio">
     <div class="container">
         <div class="text-center mb-5">
-            <h2 class="marker marker-center">Projelerim </h2>
+            <h2 class="marker marker-center">Projelerim</h2>
         </div>
         <div class="grid bp-gallery pb-3" data-aos="zoom-in-up" data-aos-delay="00">
             <div class="grid-item"></div>
-            @foreach(var item in Model){
-            <div class="grid-item ">
+            @foreach (var item in Model)
+            {
+                <div class="grid-item">
                     <a href="@item.ProjectUrl">
-                    <figure class="portfolio-item">
-                            <img src="@item.ImageUrl" style=" width: 350px; height: 200px;" data-bp="@item.ImageUrl2" />
-                        <figcaption>
-                            <h4 class="h5 mb-0">@item.Name</h4>
-                            <div>Github Linki</div>
-                        </figcaption>
-                    </figure>
-                </a>
-            </div>
+                        <figure class="portfolio-item">
+                            <img src="@item.ImageUrl" style="width: 350px; height: 200px; border-radius: 15px;" data-bp="@item.ImageUrl2" />
+
+                            <figcaption>
+                                <h4 class="h5 mb-0">@item.Name</h4>
+                                <div>Github Linki</div>
+                            </figcaption>
+                        </figure>
+                    </a>
+                </div>
             }
-          
         </div>
     </div>
 </div>
 
+<!-- Statistics Section -->
+<div class="section px-2 px-lg-4 py-5" id="statistics">
+    <div class="container">
+        <div class="stats-grid">
+            <!-- Projects Card -->
+            <div class="stats-card" data-aos="flip-left" data-aos-delay="100">
+                <div class="stats-icon">
+                    <i class="fas fa-project-diagram"></i>
+                </div>
+                <div class="stats-number">5+</div>
+                <div class="stats-label">Projeler</div>
+            </div>
 
+            <!-- Customers Card -->
+            <div class="stats-card" data-aos="flip-left" data-aos-delay="200">
+                <div class="stats-icon">
+                    <i class="fas fa-award"></i>
+                </div>
+                <div class="stats-number">15+</div>
+                <div class="stats-label">Sertifikalar</div>
+            </div>
 
- 
+            <!-- Technologies Card -->
+            <div class="stats-card" data-aos="flip-left" data-aos-delay="300">
+                <div class="stats-icon">
+                    <i class="fas fa-code"></i>
+                </div>
+                <div class="stats-number">10+</div>
+                <div class="stats-label">Teknolojiler</div>
+            </div>
+
+            <!-- Experience Card -->
+            <div class="stats-card" data-aos="flip-left" data-aos-delay="400">
+                <div class="stats-icon">
+                    <i class="fas fa-clock"></i>
+                </div>
+                <div class="stats-number">2 Yıl</div>
+                <div class="stats-label">Deneyim</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(10px, 1fr));
+        gap: 1.25rem;
+        padding:0.75rem;
+
+    }
+
+    .stats-card {
+     
+        width: 250px; /* Kartın genişliğini sabitle */
+        background: rgba(255, 255, 255, 0.95);
+        padding: 1rem 0.75rem;
+        border-radius: 0.75rem;
+        text-align: center;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        position: relative;
+        border: 1px solid rgba(0, 0, 0, 0.8);
+        box-shadow: 0 0 8px rgba(255, 223, 0, 0.3), 0 0 16px rgba(255, 223, 0, 0.2), inset 0 0 8px rgba(255, 223, 0, 0.1);
+        cursor: pointer;
+        overflow: hidden;
+    }
+
+        .stats-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient( 90deg, transparent, rgba(255, 223, 0, 0.2), transparent );
+            transition: 0.5s;
+        }
+
+        .stats-card:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 0 20px rgba(255, 223, 0, 0.5), 0 0 40px rgba(255, 223, 0, 0.3), inset 0 0 20px rgba(255, 223, 0, 0.2);
+        }
+
+            .stats-card:hover::before {
+                left: 100%;
+            }
+
+    .stats-icon {
+        font-size: 1.25rem;
+        color: #000;
+        margin-bottom: 0.5rem;
+        transform: scale(1);
+        transition: transform 0.3s ease;
+    }
+
+    .stats-card:hover .stats-icon {
+        transform: scale(1.2);
+    }
+
+    .stats-number {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #000;
+        margin-bottom: 0.25rem;
+        line-height: 1;
+        transition: color 0.3s ease;
+    }
+
+    .stats-card:hover .stats-number {
+        color: #FFB800;
+    }
+
+    .stats-label {
+        font-size: 1rem;
+        color: #333;
+        font-weight: 500;
+        transition: color 0.3s ease;
+    }
+
+    .stats-card:hover .stats-label {
+        color: #000;
+    }
+
+    @@keyframes pulse {
+        0%
+
+    {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+
+    }
+
+   @@media (max-width: 768px) {
+        .stats-grid
+
+    {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.75rem;
+    }
+
+    }
+
+    @@media (max-width: 480px) {
+        .stats-grid
+
+    {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.5rem;
+    }
+
+    .stats-card {
+        padding: 0.75rem 0.5rem;
+    }
+
+    .stats-number {
+        font-size: 1.25rem;
+    }
+
+    .stats-label {
+        font-size: 0.7rem;
+    }
+
+    }
+</style>
