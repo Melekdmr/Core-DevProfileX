@@ -3,53 +3,281 @@
 
 
 
-
-
 <div class="section px-3 px-lg-4 pt-5" id="skills">
     <div class="container-narrow">
         <div class="text-center mb-5">
             <h2 class="marker marker-center">Yeteneklerim</h2>
         </div>
         <div class="text-center">
-            
-            <p class="mx-auto mb-3" style="max-width:600px">.NET Core ve backend geliştirme alanlarında hızla ilerliyor, her projede yenilikçi çözümler ve güçlü, verimli sistemler inşa etmeye odaklanıyorum.</p>
+            <div class="code-editor-container mb-4">
+                <div class="code-editor-header">
+                    <div class="editor-buttons">
+                        <span class="editor-button close"></span>
+                        <span class="editor-button minimize"></span>
+                        <span class="editor-button maximize"></span>
+                    </div>
+                    <div class="editor-title">Index.cshtml</div>
+                </div>
+                <div class="code-editor-content">
+                    <pre><code id="typing-text"></code></pre>
+                </div>
+            </div>
         </div>
-
-        <div class="bg-light p-3">
+        <div class="bg-light p-3 skills-container">
             <div class="row">
                 <!-- Sol sütun (ID'si çift olanlar) -->
                 <div class="col-md-6">
-                    @foreach (var item in Model.Where(x => x.SkillId % 2 == 0)) // ID'si çift olanlar
+                    @foreach (var item in Model.Where(x => x.SkillId % 2 == 0))
                     {
-                        <div class="py-1">
-                            <div class="d-flex text-small fw-bolder">
-                                <span class="me-auto">@item.Title</span>
-                                <span>@item.Value</span>
+                        <div class="skill-item" data-aos="fade-right">
+                            <div class="d-flex text-small fw-bolder skill-title">
+                                <span class="me-auto">⚡ @item.Title</span>
+                                <span class="skill-value">@item.Value%</span>
                             </div>
                             <div class="progress my-1">
-                                <div class="progress-bar bg-primary" role="progressbar" data-aos="zoom-in-right" data-aos-delay="100" data-aos-anchor=".skills-section" style="width: @item.Value%" aria-valuenow="@item.Value" aria-valuemin="0" aria-valuemax="100"></div>
+                                <div class="progress-bar" role="progressbar" 
+                                     data-aos="zoom-in-right" 
+                                     data-aos-delay="100" 
+                                     style="width: @item.Value%" 
+                                     aria-valuenow="@item.Value" 
+                                     aria-valuemin="0" 
+                                     aria-valuemax="100">
+                                </div>
                             </div>
                         </div>
                     }
                 </div>
                 <!-- Sağ sütun (ID'si tek olanlar) -->
                 <div class="col-md-6">
-                    @foreach (var item in Model.Where(x => x.SkillId % 2 != 0)) // ID'si tek olanlar
+                    @foreach (var item in Model.Where(x => x.SkillId % 2 != 0))
                     {
-                        <div class="py-1">
-                            <div class="d-flex text-small fw-bolder">
-                                <span class="me-auto">@item.Title</span>
-                                <span>@item.Value</span>
+                        <div class="skill-item" data-aos="fade-left">
+                            <div class="d-flex text-small fw-bolder skill-title">
+                                <span class="me-auto">⚡ @item.Title</span>
+                                <span class="skill-value">@item.Value%</span>
                             </div>
                             <div class="progress my-1">
-                                <div class="progress-bar bg-primary" role="progressbar" data-aos="zoom-in-right" data-aos-delay="100" data-aos-anchor=".skills-section" style="width: @item.Value%" aria-valuenow="@item.Value" aria-valuemin="0" aria-valuemax="100"></div>
+                                <div class="progress-bar" role="progressbar" 
+                                     data-aos="zoom-in-right" 
+                                     data-aos-delay="100" 
+                                     style="width: @item.Value%" 
+                                     aria-valuenow="@item.Value" 
+                                     aria-valuemin="0" 
+                                     aria-valuemax="100">
+                                </div>
                             </div>
                         </div>
                     }
                 </div>
             </div>
         </div>
-
     </div>
-
 </div>
+
+<style>
+/* Skills container */
+.skills-container {
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+/* Skill kartı stilleri */
+.skill-item {
+    background: white;
+    border-radius: 8px;
+    padding: 12px 15px;
+    margin-bottom: 12px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.skill-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* Başlık stilleri */
+.skill-title {
+    margin-bottom: 8px;
+}
+
+.skill-value {
+        color: #ffa801;
+    font-weight: 600;
+}
+
+/* Progress bar stilleri */
+.progress {
+    height: 8px;
+    background-color: #f1f1f1;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    position: relative;
+    height: 100%;
+    border-radius: 10px;
+    background: linear-gradient(90deg, #4361ee, #4895ef);
+    transition: all 1.5s ease-in-out;
+}
+
+/* Hover efekti için parıltı animasyonu */
+@@keyframes shine {
+    0% { background-position: -100% 0; }
+    100% { background-position: 100% 0; }
+}
+
+.progress-bar::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+        rgba(255,255,255,0) 0%,
+        rgba(255,255,255,0.2) 50%,
+        rgba(255,255,255,0) 100%);
+    animation: shine 2s infinite;
+    display: none;
+}
+
+.skill-item:hover .progress-bar::after {
+    display: block;
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Progress barları sıfırla
+    const bars = document.querySelectorAll('.progress-bar');
+    bars.forEach(bar => {
+        const targetWidth = bar.style.width;
+        bar.style.width = '0%';
+        
+        // Animasyonu başlat
+        setTimeout(() => {
+            bar.style.width = targetWidth;
+        }, 300);
+    });
+});
+</script>
+
+
+
+<style>
+    .code-editor-container {
+        background: #1e1e1e;
+        border-radius: 6px;
+        overflow: hidden;
+        font-family: 'Consolas', 'Monaco', monospace;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        max-width: 600px;
+        margin: 10px auto;
+        
+    }
+
+    .code-editor-content {
+        padding: 12px; /* Padding'i azalttık */
+        min-height: 60px; /* Yüksekliği azalttık */
+    }
+
+    .code-editor-header {
+        background: #323233;
+        padding: 8px 16px;
+        display: flex;
+        align-items: center;
+        border-bottom: 1px solid #454545;
+    }
+
+    .editor-buttons {
+        display: flex;
+        gap: 8px;
+        margin-right: 16px;
+    }
+
+    .editor-button {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        display: inline-block;
+    }
+
+    .close {
+        background: #ff5f56;
+    }
+
+    .minimize {
+        background: #ffbd2e;
+    }
+
+    .maximize {
+        background: #27c93f;
+    }
+
+    .editor-title {
+        color: #abb2bf;
+        font-size: 0.9em;
+    }
+
+    .code-editor-content {
+        padding: 16px;
+        min-height: 100px;
+    }
+
+        .code-editor-content pre {
+            margin: 0;
+            white-space: pre-wrap;
+        }
+
+        .code-editor-content code {
+            color:green;
+            font-size: 1em;
+            line-height: 1.5;
+        }
+
+    .cursor {
+        display: inline-block;
+        width: 2px;
+        height: 1.2em;
+        background: #fff;
+        margin-left: 2px;
+        animation: blink 1s infinite;
+        vertical-align: middle;
+    }
+
+    @@keyframes blink {
+        50%
+
+    {
+        opacity: 0;
+    }
+
+    }
+</style>
+
+<!-- Scripti sayfanın en altına ekleyin -->
+<script>
+    window.onload = function() {
+        const text = ".NET Core ve backend geliştirme alanlarında hızla ilerliyor, her projede yenilikçi çözümler ve güçlü, verimli sistemler inşa etmeye odaklanıyorum...";
+        const element = document.getElementById('typing-text');
+        let index = 0;
+
+        if (element) {
+            element.innerHTML = '<span class="cursor"></span>';
+
+            function typeText() {
+                if (index < text.length) {
+                    if (element.innerHTML.includes('<span class="cursor">')) {
+                        element.innerHTML = text.slice(0, index + 1) + '<span class="cursor"></span>';
+                    }
+                    index++;
+                    setTimeout(typeText, 90);
+                }
+            }
+
+            typeText();
+        }
+    };
+</script>
