@@ -1,5 +1,7 @@
 ﻿@using EntityLayer.Concrete
 @model List<Contact>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.7.10/lottie.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.9.6/lottie.min.js"></script>
 
 <div class="col-md-6" data-aos="fade-left" data-aos-delay="300">
 @foreach (var item in Model)
@@ -31,4 +33,34 @@
         </div>
     </div>
     }
+    <div class="col-lg-6">
+        <div id="animation-containerlet"></div>
+
+        <script>
+                     document.addEventListener("DOMContentLoaded", function () {
+                var animation = lottie.loadAnimation({
+                    container: document.getElementById('animation-containerlet'),
+                    renderer: 'svg',
+                    loop: true,
+                    autoplay: true,
+                    path: '/Template/yellowletter.json'
+                });
+            });
+
+        </script>
+
+        <style>
+            #animation-containerlet {
+                position: fixed;
+                bottom: 70px;
+                right: -200px;
+                width: 150px;
+                height: 150px;
+                z-index: 9999;
+             
+            }
+
+        </style>
+
+</div>
 </div>
