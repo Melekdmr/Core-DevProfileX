@@ -1,0 +1,94 @@
+﻿@using EntityLayer.Concrete
+@model List<Experience>
+
+<style>
+    /* Genel kart stilleri */
+    .card {
+        transition: all 0.3s ease;
+        border: 1px solid #000;
+        box-shadow: 0 0 10px rgba(255, 255, 0, 0.3);
+        animation: neonGlow 2s infinite;
+    }
+
+        /* Hover efekti */
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 20px rgba(255, 255, 0, 0.5);
+        }
+
+    /* Koyu header */
+    .card-header {
+        background: #4c4855;
+        border-bottom: 1px solid #000;
+    }
+
+        /* Header içindeki metin renkleri */
+        .card-header h3.h5 {
+            color: #ffffff;
+            margin-bottom: 0.25rem;
+        }
+
+        .card-header .text-muted {
+            color: #ffffff !important;
+            opacity: 0.8;
+        }
+/* 
+    #585366 */
+    /* #343a40 */
+        /* Resim stilleri */
+        .card-header img {
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+    .card:hover img {
+        transform: rotate(5deg) scale(1.1);
+    }
+
+    /* Neon efekti animasyonu */
+    @@keyframes neonGlow {
+        0%
+
+    {
+        box-shadow: 0 0 10px rgba(255, 255, 0, 0.3);
+    }
+
+    50% {
+        box-shadow: 0 0 20px rgba(255, 255, 0, 0.5);
+    }
+
+    100% {
+        box-shadow: 0 0 10px rgba(255, 255, 0, 0.3);
+    }
+
+    }
+</style>
+
+<div class="section px-3 px-lg-4 pt-5" id="experience">
+    <div class="container-narrow">
+        <div class="text-center mb-5">
+            <h2 class="marker marker-center">Deneyimlerim</h2>
+        </div>
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                <div class="col-md-6">
+                    <div class="card mb-3" data-aos="fade-right" data-aos-delay="100">
+                        <div class="card-header px-3 py-2">
+                            <div class="d-flex justify-content-between">
+                                <div>
+                                    <h3 class="h5 mb-1">@item.Name</h3>
+                                    <div class="text-muted text-small">@item.company <small>@item.Date</small></div>
+                                </div>
+                                <img src="@item.ImageUrl" width="48" height="48" alt="ui-ux" />
+                            </div>
+                        </div>
+                        <div class="card-body px-3 py-2">
+                            <p>@item.Deccription</p>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
