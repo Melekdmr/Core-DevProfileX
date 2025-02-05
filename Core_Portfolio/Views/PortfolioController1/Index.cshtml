@@ -4,13 +4,15 @@
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
+<link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.32/dist/sweetalert2.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.32/dist/sweetalert2.all.min.js"></script>
 
 <div class="row">
     <div class="col">
         <div class="card bg-default shadow">
             <div class="card-header bg-transparent border-0">
                 <h3 class="text-white mb-0">Projelerim</h3>
-            </div>        
+            </div>
             <div class="table-responsive">
                 <table class="table align-items-center table-dark table-flush">
                     <thead class="thead-dark">
@@ -20,82 +22,162 @@
                             <th scope="col" class="sort" data-sort="status">Durum</th>
                             <th scope="col">Görseller</th>
                             <th scope="col" class="sort" data-sort="completion">Tamamlanma Oranı</th>
-                            <th scope="col"></th>
+                            <th scope="col">Sil</th>
+                            <th scope="col">Düzenle</th>
                         </tr>
                     </thead>
                     <tbody class="list">
-                        @foreach(var item in Model){
-                        <tr>
-                            <th scope="row">
-                                <div class="media align-items-center">
-                                    <a href="#" class="avatar rounded-circle mr-3">
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <th scope="row">
+                                    <div class="media align-items-center">
+                                        <a href="#" class="avatar rounded-circle mr-3">
                                             <img alt="Image placeholder" src="@item.Platform">
-                                    </a>
-                                    <div class="media-body">
-                                        <span class="name mb-0 text-sm">@item.Name</span>
+                                        </a>
+                                        <div class="media-body">
+                                            <span class="name mb-0 text-sm">@item.Name</span>
+                                        </div>
                                     </div>
-                                </div>
-                            </th>
-                            <td class="budget">
+                                </th>
+                                <td class="budget">
                                     github.com/Melekdmr/
-                            </td>
-                            <td>
-                                <span class="badge badge-dot mr-4">
-                                    <i class="bg-success"></i>
-                                    <span class="status">@item.Status</span>
-                                </span>
-                            </td>
-                            
-                            <td>
-                                <div class="avatar-group">
-                                    <a href="#" class="avatar avatar-sm rounded-circle" data-toggle="tooltip" data-original-title="Ryan Tompson">
-                                    </a>
-                                    <a href="#" class="avatar avatar-sm rounded-circle" data-toggle="tooltip" data-original-title="Romina Hadid">
-                                        <img alt="Image placeholder" src="~/argon-dashboard-master/assets/img/theme/team-1.jpg">
-                                        <img alt="Image placeholder" src="~/argon-dashboard-master/assets/img/theme/team-2.jpg">
-                                    </a>
-                                    <a href="#" class="avatar avatar-sm rounded-circle" data-toggle="tooltip" data-original-title="Alexander Smith">
-                                        <img alt="Image placeholder" src="~/argon-dashboard-master/assets/img/theme/team-3.jpg">
-                                    </a>
-                                    <a href="#" class="avatar avatar-sm rounded-circle" data-toggle="tooltip" data-original-title="Jessica Doe">
-                                        <img alt="Image placeholder" src="~/argon-dashboard-master/assets/img/theme/team-4.jpg">
-                                    </a>
-                                </div>
-                            </td>
+                                </td>
+                                <td>
+                                    <span class="badge badge-dot mr-4">
+                                        <i class="bg-success"></i>
+                                        <span class="status">@item.Status</span>
+                                    </span>
+                                </td>
+
+                                <td>
+                                    <div class="avatar-group">
+                                        <img class="avatar avatar-sm rounded-circle preview-img" src="@item.image1" onclick="enlargeImage(this)">
+                                        <img class="avatar avatar-sm rounded-circle preview-img" src="@item.image2" onclick="enlargeImage(this)">
+                                        <img class="avatar avatar-sm rounded-circle preview-img" src="@item.image3" onclick="enlargeImage(this)">
+                                    </div>
+                                </td>
+
                                 <td>
                                     <div class="d-flex align-items-center">
                                         <span class="completion mr-2">@item.Value%</span>
                                         <div>
                                             <div class="progress">
-                                                <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="@item.Value" aria-valuemin="0" aria-valuemax="100" style="width: @item.Value%;"></div>
+                                                <div class="progress-bar bg-warning"
+                                                     role="progressbar"
+                                                     aria-valuenow="@item.Value"
+                                                     aria-valuemin="0"
+                                                     aria-valuemax="100"
+                                                     style="width: @($"{item.Value}%");">
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </td>
 
-                            <td class="text-right">
-                                <div class="dropdown">
-                                    <a class="btn btn-sm btn-icon-only text-light" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        <i class="fas fa-ellipsis-v"></i>
+                                </td>
+                                <td>
+                                    <a href="javascript:void(0)" onclick="confirmDelete(@item.PortfolioId)" class="btn btn-outline-danger">
+                                        <i class="fa fa-trash"></i> Sil
                                     </a>
-                                    <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-                                        <a class="dropdown-item" href="#">Action</a>
-                                        <a class="dropdown-item" href="#">Another action</a>
-                                        <a class="dropdown-item" href="#">Something else here</a>
-                                    </div>
-                                </div>
-                            </td>
-                        </tr>
+                                </td>
+                                <td>
+                                    <a href="/PortfolioController1/EditPortfolio/@item.PortfolioId/" class="btn btn-outline-success">
+                                        <i class="fa fa-edit"></i> Düzenle
+                                    </a>
+                                </td>
+                            </tr>
                         }
                     </tbody>
                 </table>
-              
-                
             </div>
-           
         </div>
         <a href="/PortfolioController1/AddPortfolio/" class="btn btn-primary">Proje Ekle</a>
-
-
     </div>
 </div>
+
+<!-- Büyütülen Resim İçin -->
+<div id="overlay" onclick="closeImage()">
+    <img id="fullImage">
+</div>
+
+<style>
+    .avatar img {
+        width: 100%; /* Avatarın boyutuna tam oturması için */
+        height: 100%; /* Kesilmeyi önlemek için */
+        object-fit: cover; /* Görsellerin orantılı bir şekilde kırpılmasını sağlar */
+        border-radius: 50%; /* Tam daire olmasını sağlar */
+    }
+
+    /* Büyütülen resim efekti */
+    #overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.8);
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+    }
+
+    #fullImage {
+        max-width: 80%;
+        max-height: 80%;
+        border-radius: 10px;
+    }
+</style>
+
+<script>
+    function enlargeImage(img) {
+        document.getElementById("fullImage").src = img.src;
+        document.getElementById("overlay").style.display = "flex";
+    }
+
+    function closeImage() {
+        document.getElementById("overlay").style.display = "none";
+    }
+</script>
+<script>
+    function confirmDelete(portfolioId) {
+        Swal.fire({
+            title: 'Silmek istediğinize emin misiniz?',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#d33',
+            cancelButtonColor: '#3085d6',
+            confirmButtonText: 'Sil',
+            cancelButtonText: 'İptal',
+            width: '300px',
+            customClass: {
+                popup: 'small-alert'
+            }
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.location.href = `/PortfolioController1/DeletePortfolio/${portfolioId}`;
+            }
+        })
+    }
+</script>
+
+<style>
+    .small-alert {
+        font-size: 0.9rem !important;
+    }
+
+        .small-alert .swal2-title {
+            font-size: 1.1rem;
+            padding: 0.5em;
+        }
+
+        .small-alert .swal2-icon {
+            transform: scale(0.8);
+            margin: 0.5em auto;
+        }
+
+        .small-alert .swal2-actions button {
+            font-size: 0.9rem;
+            padding: 0.3em 1.5em;
+        }
+</style>

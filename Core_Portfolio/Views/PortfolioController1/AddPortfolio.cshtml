@@ -14,22 +14,27 @@
     @Html.Label("Title", "Proje Başlığı")
 
     @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x =>x.Name,null,new{@class="text-danger"})
     <br />
 
     <label>Proje URL</label>
     @Html.TextBoxFor(x => x.ProjectUrl, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.ProjectUrl, null, new { @class = "text-danger" })
     <br />
   
   
     <label>Görsel 1</label>
     @Html.TextBoxFor(x => x.image1, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.image1, null, new { @class = "text-danger" })
     <br />
     <label>Platform</label>
     @Html.TextBoxFor(x => x.Platform, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.Platform, null, new { @class = "text-danger" })
     <br />
 
     <label>Durum</label>
     @Html.TextBoxFor(x => x.Status, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.Status, null, new { @class = "text-danger" })
     <br />
   
     <button class="btn btn-info">Kaydet</button>
