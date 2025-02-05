@@ -2,6 +2,7 @@
 using BusinessLayer.ValidationRules;
 using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
+using FluentValidation.AspNetCore;
 using FluentValidation.Results;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
@@ -73,6 +74,40 @@ namespace Core_Portfolio.Controllers
 			var values = portfolioManager.TGetByID(id);
 			portfolioManager.TDelete(values);
 			return RedirectToAction("Index");
+		}
+		[HttpGet]
+		public IActionResult EditPortfolio(int id)
+		{
+			ViewBag.v1 = "Proje Listesi";
+			ViewBag.v2 = "Projelerim";
+			ViewBag.v3 = "Proje Düzenleme";
+			var values = portfolioManager.TGetByID(id);
+
+			return View(values);
+
+		}
+		[HttpPost]
+		public IActionResult EditPortfolio(Portfolio portfolio)
+		{
+
+			PortfolioValidator validations = new PortfolioValidator();
+			ValidationResult result = validations.Validate(portfolio);
+			if (result.IsValid)
+			{
+				portfolioManager.TUpdate(portfolio);
+				return RedirectToAction("Index");
+			}
+			else
+			{
+				foreach(var item in result.Errors)
+				{
+					ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
+
+
+				}
+			}return View();
+
+		
 		}
 	}
 }
