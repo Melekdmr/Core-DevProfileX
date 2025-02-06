@@ -1,30 +1,36 @@
-﻿@using EntityLayer.Concrete
+﻿
+ 
+@using EntityLayer.Concrete
 @model List<Portfolio>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-
-
 
 <div class="section px-2 px-lg-4 pt-5" id="portfolio">
     <div class="container">
         <div class="text-center mb-5">
             <h2 class="marker marker-center">Projelerim</h2>
         </div>
-        <div class="grid bp-gallery pb-3" data-aos="zoom-in-up" data-aos-delay="00">
-            <div class="grid-item"></div>
+        <div class="portfolio-grid" data-aos="zoom-in-up" data-aos-delay="100">
             @foreach (var item in Model)
             {
-                <div class="grid-item">
+                <div class="project-card">
                     <a href="@item.ProjectUrl">
                         <figure class="portfolio-item">
-                            <img src="@item.ImageUrl" style="width: 350px; height: 200px; border-radius: 15px;" data-bp="@item.ImageUrl2" />
-
+                            <img src="@item.ImageUrl" style="width: 100%; height: 200px; border-radius: 15px;" data-bp="@item.ImageUrl2" />
                             <figcaption>
                                 <h4 class="h5 mb-0">@item.Name</h4>
                                 <div>Github Linki</div>
                             </figcaption>
                         </figure>
                     </a>
+                    <div class="project-description">
+                        <h5>@item.Name</h5>
+                     
+                        <div class="tech-stack">
+                            
+                            <span class="tech-tag">SQL-MVC.ASP.NET</span>
+                        </div>
+                    </div>
                 </div>
             }
         </div>
@@ -32,10 +38,9 @@
 </div>
 
 <!-- Statistics Section -->
-<div class="section px-2 px-lg-4 py-5" id="statistics">
+<div class="section px-2 px-lg-4 py-4" id="statistics">
     <div class="container">
         <div class="stats-grid">
-            <!-- Projects Card -->
             <div class="stats-card" data-aos="flip-left" data-aos-delay="100">
                 <div class="stats-icon">
                     <i class="fas fa-project-diagram"></i>
@@ -44,7 +49,6 @@
                 <div class="stats-label">Projeler</div>
             </div>
 
-            <!-- Customers Card -->
             <div class="stats-card" data-aos="flip-left" data-aos-delay="200">
                 <div class="stats-icon">
                     <i class="fas fa-award"></i>
@@ -53,7 +57,6 @@
                 <div class="stats-label">Sertifikalar</div>
             </div>
 
-            <!-- Technologies Card -->
             <div class="stats-card" data-aos="flip-left" data-aos-delay="300">
                 <div class="stats-icon">
                     <i class="fas fa-code"></i>
@@ -62,7 +65,6 @@
                 <div class="stats-label">Teknolojiler</div>
             </div>
 
-            <!-- Experience Card -->
             <div class="stats-card" data-aos="flip-left" data-aos-delay="400">
                 <div class="stats-icon">
                     <i class="fas fa-clock"></i>
@@ -75,60 +77,118 @@
 </div>
 
 <style>
+    .portfolio-grid {
+        display: grid !important;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
+        gap: 0 !important; /* Boşluğu tamamen kaldırdık */
+        padding: 0 !important;
+        margin: 0 -0.125rem !important; /* Negative margin to pull cards closer */
+    }
+
+    .project-card {
+        background: #4c4855;
+        border-radius: 15px;
+        overflow: hidden;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        margin: 0.125rem !important; /* Minimum margin for separation */
+        max-width: 320px; /* Kartların maksimum genişliğini azalttık */
+        width: 100%;
+        justify-self: center;
+    }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+            z-index: 1; /* Hover durumunda kartın üstte görünmesini sağlar */
+        }
+
+    .portfolio-item {
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+        .portfolio-item img {
+            display: block;
+            width: 100%;
+            height: 200px !important;
+            object-fit: cover !important;
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+
+    .project-description {
+        padding: 1.5rem;
+        background: rgba(76, 72, 85, 0.95);
+        color: white;
+        border-top: 2px solid rgba(255, 223, 0, 0.3);
+    }
+
+        .project-description h5 {
+            color: white;
+            margin-bottom: 0.75rem;
+            font-size: 1.1rem;
+        }
+
+        .project-description p {
+            font-size: 0.9rem;
+            line-height: 1.5;
+            margin-bottom: 1rem;
+            color: #e0e0e0;
+        }
+
+    .tech-stack {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+
+    .tech-tag {
+        background: rgba(255, 184, 0, 0.2);
+        color: #FFB800;
+        padding: 0.25rem 0.75rem;
+        border-radius: 15px;
+        font-size: 0.8rem;
+        border: 1px solid rgba(255, 184, 0, 0.3);
+        transition: all 0.3s ease;
+    }
+
+        .tech-tag:hover {
+            background: rgba(255, 184, 0, 0.3);
+            transform: scale(1.05);
+        }
+
+    /* Statistics Styles */
     .stats-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(10px, 1fr));
+        grid-template-columns: repeat(4, 1fr);
         gap: 1.25rem;
-        padding:0.75rem;
-
+        padding: 0.75rem;
+        margin-top: -2rem;
     }
 
     .stats-card {
-     
-        width: 250px; /* Kartın genişliğini sabitle */
+        width: 250px;
         background: #4c4855;
-        ;
         padding: 1rem 0.75rem;
         border-radius: 0.75rem;
         text-align: center;
         transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        position: relative;
         border: 1px solid rgba(0, 0, 0, 0.8);
         box-shadow: 0 0 8px rgba(255, 223, 0, 0.3), 0 0 16px rgba(255, 223, 0, 0.2), inset 0 0 8px rgba(255, 223, 0, 0.1);
         cursor: pointer;
         overflow: hidden;
     }
 
-        .stats-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient( 90deg, transparent, rgba(255, 223, 0, 0.2), transparent );
-            transition: 0.5s;
-        }
-
         .stats-card:hover {
             transform: translateY(-5px) scale(1.02);
             box-shadow: 0 0 20px rgba(255, 223, 0, 0.5), 0 0 40px rgba(255, 223, 0, 0.3), inset 0 0 20px rgba(255, 223, 0, 0.2);
         }
 
-            .stats-card:hover::before {
-                left: 100%;
-            }
-
     .stats-icon {
         font-size: 1.25rem;
         color: white;
         margin-bottom: 0.5rem;
-        transform: scale(1);
-        transition: transform 0.3s ease;
-    }
-
-    .stats-card:hover .stats-icon {
-        transform: scale(1.2);
     }
 
     .stats-number {
@@ -136,8 +196,6 @@
         font-weight: 700;
         color: white;
         margin-bottom: 0.25rem;
-        line-height: 1;
-        transition: color 0.3s ease;
     }
 
     .stats-card:hover .stats-number {
@@ -148,59 +206,38 @@
         font-size: 1rem;
         color: white;
         font-weight: 500;
-        transition: color 0.3s ease;
     }
 
-    .stats-card:hover .stats-label {
-        color: white;
+    /* Responsive Design */
+    @@media (max-width: 1200px) {
+        .stats-grid {
+            grid-template-columns: repeat(2, 1fr);
+            justify-items: center;
+        }
     }
 
-    @@keyframes pulse {
-        0%
+    @@media (max-width: 768px) {
+        .portfolio-grid {
+            gap: 0.25rem !important;
+        }
 
-    {
-        transform: scale(1);
-    }
-
-    50% {
-        transform: scale(1.05);
-    }
-
-    100% {
-        transform: scale(1);
-    }
-
-    }
-
-   @@media (max-width: 768px) {
-        .stats-grid
-
-    {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 0.75rem;
-    }
-
+        .stats-card {
+            width: 100%;
+            max-width: 250px;
+        }
     }
 
     @@media (max-width: 480px) {
-        .stats-grid
+        .stats-grid {
+            gap: 0.75rem;
+        }
 
-    {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 0.5rem;
-    }
+        .stats-number {
+            font-size: 1.25rem;
+        }
 
-    .stats-card {
-        padding: 0.75rem 0.5rem;
-    }
-
-    .stats-number {
-        font-size: 1.25rem;
-    }
-
-    .stats-label {
-        font-size: 0.7rem;
-    }
-
+        .stats-label {
+            font-size: 0.8rem;
+        }
     }
 </style>

@@ -7,6 +7,18 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Include="bin\Debug\net8.0\DataAccessLayer.deps.json" />
+    <Content Include="bin\Debug\net8.0\DataAccessLayer.runtimeconfig.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="bin\Debug\net8.0\DataAccessLayer.dll" />
+    <None Include="bin\Debug\net8.0\DataAccessLayer.pdb" />
+    <None Include="bin\Debug\net8.0\EntityLayer.dll" />
+    <None Include="bin\Debug\net8.0\EntityLayer.pdb" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.0">
       <PrivateAssets>all</PrivateAssets>
