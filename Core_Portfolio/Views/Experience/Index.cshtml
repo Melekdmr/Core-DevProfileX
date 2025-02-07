@@ -2,7 +2,7 @@
 @model List<Experience>
 @{
     ViewData["Title"] = "Index";
-    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
 }
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
@@ -53,8 +53,9 @@
             </tr>
             }
         </tbody>
+       
     </table>
-
+    <br />
     <a href="/Experience/AddExperience/" class="btn btn-primary">Deneyim Ekle</a>
 </div>
 
