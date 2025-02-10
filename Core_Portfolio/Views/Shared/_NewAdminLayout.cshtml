@@ -15,14 +15,11 @@
     <link rel="stylesheet" href="~/corona-free/dist/assets/vendors/ti-icons/css/themify-icons.css">
     <link rel="stylesheet" href="~/corona-free/dist/assets/vendors/css/vendor.bundle.base.css">
     <link rel="stylesheet" href="~/corona-free/dist/assets/vendors/font-awesome/css/font-awesome.min.css">
-    <!-- endinject -->
-    <!-- Plugin css for this page -->
-    <!-- End plugin css for this page -->
-    <!-- inject:css -->
-    <!-- endinject -->
-    <!-- Layout styles -->
+    <link rel="stylesheet" href="~/corona-free/dist/assets/vendors/jvectormap/jquery-jvectormap.css">
+    <link rel="stylesheet" href="~/corona-free/dist/assets/vendors/flag-icon-css/css/flag-icons.min.css">
+    <link rel="stylesheet" href="~/corona-free/dist/assets/vendors/owl-carousel-2/owl.carousel.min.css">
+    <link rel="stylesheet" href="~/corona-free/dist/assets/vendors/owl-carousel-2/owl.theme.default.min.css">
     <link rel="stylesheet" href="~/corona-free/dist/assets/css/style.css">
-    <!-- End layout styles -->
     <link rel="shortcut icon" href="~/corona-free/dist/assets/images/favicon.png" />
 </head>
 <body>
@@ -399,18 +396,26 @@
         <!-- page-body-wrapper ends -->
     </div>
     <!-- container-scroller -->
-    <!-- plugins:js -->
-    <script src="~/corona-free/dist/assets/vendors/js/vendor.bundle.base.js"></script>
-    <!-- endinject -->
-    <!-- Plugin js for this page -->
-    <!-- End plugin js for this page -->
-    <!-- inject:js -->
-    <script src="~/corona-free/dist/assets/js/off-canvas.js"></script>
-    <script src="~/corona-free/dist/assets/js/misc.js"></script>
-    <script src="~/corona-free/dist/assets/js/settings.js"></script>
-    <script src="~/corona-free/dist/assets/js/todolist.js"></script>
-    <!-- endinject -->
-    <!-- Custom js for this page -->
-    <!-- End custom js for this page -->
+    <!-- jQuery önce yüklenmeli -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Vendor Plugins -->
+    <script src="~/corona-free/dist/assets/vendors/js/vendor.bundle.base.js" asp-append-version="true"></script>
+    <script src="~/corona-free/dist/assets/vendors/chart.js/chart.umd.js" asp-append-version="true"></script>
+    <script src="~/corona-free/dist/assets/vendors/progressbar.js/progressbar.min.js" asp-append-version="true"></script>
+    <script src="~/corona-free/dist/assets/vendors/jvectormap/jquery-jvectormap.min.js" asp-append-version="true"></script>
+    <script src="~/corona-free/dist/assets/vendors/jvectormap/jquery-jvectormap-world-mill-en.js" asp-append-version="true"></script>
+
+    <!-- jQuery Plugins -->
+    <script src="~/corona-free/dist/assets/vendors/owl-carousel-2/owl.carousel.min.js" asp-append-version="true"></script>
+    <script src="~/corona-free/dist/assets/js/jquery.cookie.js" type="text/javascript" asp-append-version="true"></script>
+
+    <!-- Global Custom JS -->
+    <script src="~/corona-free/dist/assets/js/off-canvas.js" asp-append-version="true"></script>
+    <script src="~/corona-free/dist/assets/js/misc.js" asp-append-version="true"></script>
+    <script src="~/corona-free/dist/assets/js/settings.js" asp-append-version="true"></script>
+    <script src="~/corona-free/dist/assets/js/todolist.js" asp-append-version="true"></script>
+
+
 </body>
 </html>
