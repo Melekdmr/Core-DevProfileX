@@ -1,0 +1,61 @@
+﻿@using EntityLayer.Concrete
+@model List<Portfolio>
+<div class="row ">
+                        <div class="col-12 grid-margin">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4 class="card-title">Proje Listesi</h4>
+                                    <div class="table-responsive">
+                                        <table class="table">
+                                            <thead>
+                                                <tr>
+                                                 
+                                                    <th> #</th>
+                                                    <th> Platform</th>
+                                                    <th> Proje Adı </th>
+                                                    <th> Görsel </th>
+                                                    <th> URL </th>
+                                                 
+                                                    <th> Tamamlanma </th>
+                                                    <th> Durum</th>
+                                                
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @foreach(var x in Model){
+                                <tr>
+
+                                    <th> @x.PortfolioId</th>
+                                    <td>
+                                        <img src="@x.Platform" alt="Görsel" style="width: 50px; height: 50px; object-fit: cover;" />
+                                    </td>
+
+                                    <td> @x.Name</td>
+                                    <td>
+                                        <img src="@x.ImageUrl" alt="Görsel" style="width: 50px; height: 50px; object-fit: cover;" />
+                                    </td>
+
+                                    <td> @x.ProjectUrl </td>
+                                
+                                    <td>   % @x.Value </td>
+                                    <td>
+                                        <span class="badge border @(x.Status == "Tamamlandı" ? "border-success text-success" : "border-danger text-danger")">
+                                            @x.Status
+                                        </span>
+                                    </td>
+
+
+
+
+                                  
+
+                                </tr>
+                                                }
+                                              
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
