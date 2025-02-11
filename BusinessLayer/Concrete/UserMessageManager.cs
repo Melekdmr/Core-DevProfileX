@@ -23,6 +23,11 @@ namespace BusinessLayer.Concrete
 			return _IUserMessageDal.GetList();
 		}
 
+		public List<UserMessage> GetUserMessageWithUserService()
+		{
+			return _IUserMessageDal.GetUserMessageWithUser();
+		}
+
 		public void TAdd(UserMessage t)
 		{
 			throw new NotImplementedException();
