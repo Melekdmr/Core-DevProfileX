@@ -7,8 +7,18 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Include="obj\Debug\net8.0\.NETCoreApp,Version=v8.0.AssemblyAttributes.cs" />
+    <Compile Include="obj\Debug\net8.0\DataAccessLayer.AssemblyInfo.cs" />
+    <Compile Include="obj\Debug\net8.0\DataAccessLayer.GlobalUsings.g.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Include="bin\Debug\net8.0\DataAccessLayer.deps.json" />
     <Content Include="bin\Debug\net8.0\DataAccessLayer.runtimeconfig.json" />
+    <Content Include="obj\DataAccessLayer.csproj.nuget.dgspec.json" />
+    <Content Include="obj\Debug\net8.0\DataAccessLayer.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\net8.0\DataAccessLayer.sourcelink.json" />
+    <Content Include="obj\project.assets.json" />
   </ItemGroup>
 
   <ItemGroup>
@@ -16,6 +26,20 @@
     <None Include="bin\Debug\net8.0\DataAccessLayer.pdb" />
     <None Include="bin\Debug\net8.0\EntityLayer.dll" />
     <None Include="bin\Debug\net8.0\EntityLayer.pdb" />
+    <None Include="obj\DataAccessLayer.csproj.nuget.g.props" />
+    <None Include="obj\DataAccessLayer.csproj.nuget.g.targets" />
+    <None Include="obj\Debug\net8.0\DataAcce.E67BD773.Up2Date" />
+    <None Include="obj\Debug\net8.0\DataAccessLayer.AssemblyInfoInputs.cache" />
+    <None Include="obj\Debug\net8.0\DataAccessLayer.assets.cache" />
+    <None Include="obj\Debug\net8.0\DataAccessLayer.csproj.AssemblyReference.cache" />
+    <None Include="obj\Debug\net8.0\DataAccessLayer.csproj.CoreCompileInputs.cache" />
+    <None Include="obj\Debug\net8.0\DataAccessLayer.dll" />
+    <None Include="obj\Debug\net8.0\DataAccessLayer.GeneratedMSBuildEditorConfig.editorconfig" />
+    <None Include="obj\Debug\net8.0\DataAccessLayer.genruntimeconfig.cache" />
+    <None Include="obj\Debug\net8.0\DataAccessLayer.pdb" />
+    <None Include="obj\Debug\net8.0\refint\DataAccessLayer.dll" />
+    <None Include="obj\Debug\net8.0\ref\DataAccessLayer.dll" />
+    <None Include="obj\project.nuget.cache" />
   </ItemGroup>
 
   <ItemGroup>
