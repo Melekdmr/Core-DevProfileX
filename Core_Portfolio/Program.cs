@@ -1,4 +1,4 @@
-using EntityLayer.Concrete;
+﻿
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -23,9 +23,15 @@ app.UseRouting();
 app.UseAuthorization();
 
 app.MapControllerRoute(
-	name: "default",
-	pattern: "{controller=Home}/{action=Index}/{id?}");
+	name: "areas",
+	pattern: "{area:exists}/{controller=Default}/{action=Index}/{id?}"
+);
 
+// 🔹 Sonra DEFAULT rotayı tanımlıyoruz
+app.MapControllerRoute(
+	name: "default",
+	pattern: "{controller=Home}/{action=Index}/{id?}"
+);
 
 app.Run();
 
