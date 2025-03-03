@@ -9,10 +9,11 @@ namespace Core_Portfolio.Areas.Writer.Models
 		public string Name { get; set; }
 
 		[Required(ErrorMessage = "Lütfen Soyadınızı Girin")]
-		public string ImageUrl { get; set; }
-
-		[Required(ErrorMessage = "Lütfen Resim URL Girin")]
 		public string Surname { get; set; }
+
+
+		[Required(ErrorMessage = "Lütfen Görsel URL Girin")]
+		public string ImageUrl { get; set; }
 
 		[Required(ErrorMessage = "Lütfen Kullanıcı Adınızı Girin")]
 
