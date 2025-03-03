@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Core_Portfolio.Areas.Writer.Models;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Core_Portfolio.Areas.Writer.Controllers
 {
@@ -11,8 +12,12 @@ namespace Core_Portfolio.Areas.Writer.Controllers
 			return View();
 		}
 		[HttpPost]
-		public IActionResult Index(string p)
+		public IActionResult Index(UserRegisterViewModel p)
 		{
+			if (ModelState.IsValid)
+			{
+				
+			}
 			return View();
 		}
 
