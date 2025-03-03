@@ -1,10 +1,14 @@
-﻿
+﻿using DataAccessLayer.Concrete;
+using EntityLayer.Concrete;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddDbContext<Context>();
+builder.Services.AddIdentity<WriterUser, WriterRole>().AddEntityFrameworkStores<Context>();
 builder.Services.AddControllersWithViews();
 builder.Services.AddRazorPages().AddRazorRuntimeCompilation();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -27,7 +31,7 @@ app.MapControllerRoute(
 	pattern: "{area:exists}/{controller=Default}/{action=Index}/{id?}"
 );
 
-// 🔹 Sonra DEFAULT rotayı tanımlıyoruz
+//  Sonra DEFAULT rotayı tanımlıyoruz
 app.MapControllerRoute(
 	name: "default",
 	pattern: "{controller=Home}/{action=Index}/{id?}"

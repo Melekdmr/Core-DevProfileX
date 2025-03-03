@@ -1,25 +1,67 @@
 ﻿using Core_Portfolio.Areas.Writer.Models;
+using EntityLayer.Concrete;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Hosting;
+using System.Security.Principal;
 
 namespace Core_Portfolio.Areas.Writer.Controllers
 {
 	[Area("Writer")]
 	public class RegisterController : Controller
+	/* UserManager<WriterUser> gibi bağımlılıklar (service, repository, database context vb.)
+	 * doğrudan new anahtar kelimesiyle oluşturulmaz.Bunun yerine, constructor içinde 
+	 * dışarıdan enjekte edilir. Bu, bağımlılıkları yönetmeyi ve test edilebilirliği kolaylaştırır. */
 	{
+		private readonly UserManager<WriterUser> _userManager;
+
+		//constructor ataması yapıldı.
+
+		/*Bu satırda, UserManager<WriterUser> türünde bir değişken tanımlanıyor.UserManager sınıfı,
+		 * ASP.NET Core Identity sisteminin kullanıcı yönetimi işlemlerini gerçekleştirir. Burada, 
+		 * WriterUser muhtemelen kullanıcıyı temsil eden bir sınıf (veya varlık) olup, kullanıcıya
+		 * özgü özellikleri (örneğin: kullanıcı adı, e-posta gibi) içeriyor.*/
+		public RegisterController(UserManager<WriterUser> userManager)
+		{
+			_userManager = userManager;
+		}
+
 		[HttpGet]
 		public IActionResult Index()
 		{
 			return View();
 		}
 		[HttpPost]
-		public IActionResult Index(UserRegisterViewModel p)
+		public async Task<IActionResult> Index(UserRegisterViewModel p)
 		{
 			if (ModelState.IsValid)
 			{
-				
+				WriterUser w = new WriterUser()
+				{
+					Name = p.Name,
+					Surname = p.Surname,
+					Email = p.Mail,
+					UserName = p.UserName,
+					ImageUrl = p.ImageUrl
+
+				};
+				var result = await _userManager.CreateAsync(w, p.Password);
+				if (result.Succeeded)
+				{
+					return RedirectToAction("Index", "Login");
+				}
+				else
+				{
+					foreach (var item in result.Errors)
+					{
+						ModelState.AddModelError("", item.Description);
+					}
+				}
+
 			}
+
 			return View();
 		}
-
 	}
 }
+
