@@ -11,16 +11,15 @@ namespace Core_Portfolio.Areas.Writer.Controllers
 	public class RegisterController : Controller
 	/* UserManager<WriterUser> gibi bağımlılıklar (service, repository, database context vb.)
 	 * doğrudan new anahtar kelimesiyle oluşturulmaz.Bunun yerine, constructor içinde 
-	 * dışarıdan enjekte edilir. Bu, bağımlılıkları yönetmeyi ve test edilebilirliği kolaylaştırır. */
+	 * dışarıdan enjekte edilir. */
 	{
+		/*readonly anahtar kelimesi, bu değişkenin yalnızca yapıcı metod (constructor) içinde değer alabileceğini belirtir.*/
 		private readonly UserManager<WriterUser> _userManager;
 
 		//constructor ataması yapıldı.
 
 		/*Bu satırda, UserManager<WriterUser> türünde bir değişken tanımlanıyor.UserManager sınıfı,
-		 * ASP.NET Core Identity sisteminin kullanıcı yönetimi işlemlerini gerçekleştirir. Burada, 
-		 * WriterUser muhtemelen kullanıcıyı temsil eden bir sınıf (veya varlık) olup, kullanıcıya
-		 * özgü özellikleri (örneğin: kullanıcı adı, e-posta gibi) içeriyor.*/
+		 * ASP.NET Core Identity sisteminin kullanıcı yönetimi işlemlerini gerçekleştirir. */
 		public RegisterController(UserManager<WriterUser> userManager)
 		{
 			_userManager = userManager;
