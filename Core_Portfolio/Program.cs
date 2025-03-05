@@ -21,10 +21,10 @@ if (!app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
-app.UseAuthentication();
+app.UseAuthentication(); /*kimlik doğrulama  Kullanıcının kimliğini doğrular ancak bu kullanıcıya bir işlem yapma izni vermez.;giriş yapma vs*/
 app.UseRouting();
 
-app.UseAuthorization();
+app.UseAuthorization(); /*yetkilendirme  Kullanıcı giriş yapmış olsa bile, sadece "Admin" rolüne sahip kullanıcıların belirli bir sayfaya erişmesini sağlar.*/
 
 app.MapControllerRoute(
 	name: "areas",
