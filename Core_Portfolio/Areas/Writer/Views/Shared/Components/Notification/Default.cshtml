@@ -1,45 +1,35 @@
-﻿<div class="dropdown-menu dropdown-menu-end navbar-dropdown preview-list" aria-labelledby="notificationDropdown">
+﻿@using EntityLayer.Concrete
+@model List<Announcement>
+
+@{
+    string color = "";
+}
+<div class="dropdown-menu dropdown-menu-end navbar-dropdown preview-list" aria-labelledby="notificationDropdown">
     <p class="mb-0 font-weight-normal float-left dropdown-header">Bildirimler</p>
 
-    <a class="dropdown-item preview-item">
+    @foreach(var item in Model){
+        if (item.Status == "Eğitim Duyurusu") color = "preview-icon bg-danger";
+        if (item.Status == "Kariyer Fırsatları") color = "preview-icon bg-success";
+        if (item.Status == "Araç ve Kütüphane") color = "preview-icon bg-info";
+        if (item.Status == "Güvenlik Duyurusu") color = "preview-icon bg-warning";
+        if (item.Status == "Framework Tanıtımı") color = "preview-icon bg-dark";
+        if (item.Status == "Kamp Duyurusu") color = "preview-icon bg-warning";
+        
+    <a class="dropdown-item preview-item" href="/Writer/Default/AnnouncementDetails/@item.ID">
         <div class="preview-thumbnail">
-            <div class="preview-icon bg-success">
-                <i class="fas fa-info-circle mx-0"></i> <!-- İkon düzeltildi -->
+            <div class="@color">
+                <i class="ti-info-alt mx-0"></i> <!-- İkon düzeltildi -->
             </div>
         </div>
         <div class="preview-item-content">
-            <h6 class="preview-subject font-weight-normal">Uygulama Hataları</h6>
+            <h6 class="preview-subject font-weight-normal">@item.Title</h6>
             <p class="font-weight-light small-text mb-0 text-muted">
-                Just now
+              @item.Status
             </p>
         </div>
     </a>
+    }
+   
 
-    <a class="dropdown-item preview-item">
-        <div class="preview-thumbnail">
-            <div class="preview-icon bg-warning">
-                <i class="fas fa-cog mx-0"></i> <!-- İkon düzeltildi -->
-            </div>
-        </div>
-        <div class="preview-item-content">
-            <h6 class="preview-subject font-weight-normal">Settings</h6>
-            <p class="font-weight-light small-text mb-0 text-muted">
-                Private message
-            </p>
-        </div>
-    </a>
-
-    <a class="dropdown-item preview-item">
-        <div class="preview-thumbnail">
-            <div class="preview-icon bg-info">
-                <i class="fas fa-user mx-0"></i> <!-- İkon düzeltildi -->
-            </div>
-        </div>
-        <div class="preview-item-content">
-            <h6 class="preview-subject font-weight-normal">New user registration</h6>
-            <p class="font-weight-light small-text mb-0 text-muted">
-                2 days ago
-            </p>
-        </div>
-    </a>
+    
 </div>
