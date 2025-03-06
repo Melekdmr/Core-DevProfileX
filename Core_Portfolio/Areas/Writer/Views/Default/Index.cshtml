@@ -32,7 +32,7 @@
                             if (item.Status == "Framework Tanıtımı") color = "badge badge-dark";
                             if (item.Status == "Kamp Duyurusu") color = "badge badge-secondary";
                             <tr>
-                            <td>@item.ID</td>
+                            <th>@item.ID</th>
                             <td>@item.Title</td>
                             <td>@(((DateTime)item.Date).ToString("dd-MMM-yyyy"))</td>
                             <td><label class="@color">@item.Status</label></td>
