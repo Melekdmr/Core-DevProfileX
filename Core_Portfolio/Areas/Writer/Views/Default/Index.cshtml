@@ -20,6 +20,7 @@
                             <th>Başlık</th>
                             <th>Tarih</th>
                             <th>Konu</th>
+                            <th>Detaylar</th>
                       
                         </tr>
                     </thead>
@@ -30,12 +31,13 @@
                             if (item.Status == "Araç ve Kütüphane") color = "badge badge-info";
                             if (item.Status == "Güvenlik Duyurusu") color = "badge badge-warning";
                             if (item.Status == "Framework Tanıtımı") color = "badge badge-dark";
-                            if (item.Status == "Kamp Duyurusu") color = "badge badge-secondary";
+                            if (item.Status == "Kamp Duyurusu") color = "badge badge-warning";
                             <tr>
                             <th>@item.ID</th>
                             <td>@item.Title</td>
                             <td>@(((DateTime)item.Date).ToString("dd-MMM-yyyy"))</td>
                             <td><label class="@color">@item.Status</label></td>
+                                <td><a href="/Writer/Default/AnnouncementDetails/@item.ID" class="btn btn-outline-primary">Detaylar</a></td>
                         </tr>
                         }
                      
