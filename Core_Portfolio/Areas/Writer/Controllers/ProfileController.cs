@@ -34,6 +34,7 @@ namespace Core_Portfolio.Areas.Writer.Controllers
 				var extension = Path.GetExtension(p.Picture.FileName);
 				var imageName = Guid.NewGuid() + extension;
 				var saveLocation = resource + "/wwwroot/userImage/" + imageName;
+
 				var stream = new FileStream(saveLocation, FileMode.Create);
 				await p.Picture.CopyToAsync(stream);
 				user.ImageUrl = imageName;
