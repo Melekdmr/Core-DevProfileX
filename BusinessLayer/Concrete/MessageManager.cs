@@ -33,6 +33,11 @@ namespace BusinessLayer.Concrete
 			throw new NotImplementedException();
 		}
 
+		public List<Message> TGetbyFilter()
+		{
+			throw new NotImplementedException();
+		}
+
 		public Message TGetByID(int id)
 		{
 			throw new NotImplementedException();

@@ -33,6 +33,11 @@ public class ContactManager : IContactService
 			throw new NotImplementedException();
 		}
 
+		public List<Contact> TGetbyFilter()
+		{
+			throw new NotImplementedException();
+		}
+
 		public Contact TGetByID(int id)
 		{
 			throw new NotImplementedException();

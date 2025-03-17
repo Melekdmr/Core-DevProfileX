@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace BusinessLayer.Concrete
 {
-	public class FeatureManager : IGenericService<Feature>
+	public class FeatureManager : IFeatureService
 	{
 		IFeatureDal _featureDal;
 
@@ -31,6 +31,11 @@ namespace BusinessLayer.Concrete
 		public void TDelete(Feature t)
 		{
 			_featureDal.Delete(t);
+		}
+
+		public List<Feature> TGetbyFilter()
+		{
+			throw new NotImplementedException();
 		}
 
 		public Feature TGetByID(int id)

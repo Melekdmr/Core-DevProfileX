@@ -33,6 +33,11 @@ public class TestimonialManager:ITestimonialService
 			throw new NotImplementedException();
 		}
 
+		public List<Testimonial> TGetbyFilter()
+		{
+			throw new NotImplementedException();
+		}
+
 		public Testimonial TGetByID(int id)
 		{
 			throw new NotImplementedException();

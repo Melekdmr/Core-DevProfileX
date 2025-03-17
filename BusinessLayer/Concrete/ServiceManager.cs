@@ -33,6 +33,11 @@ namespace BusinessLayer.Concrete
 			_serviceDal.Delete(t);
 		}
 
+		public List<Service> TGetbyFilter()
+		{
+			throw new NotImplementedException();
+		}
+
 		public Service TGetByID(int id)
 		{
 			return _serviceDal.GetByID(id);
