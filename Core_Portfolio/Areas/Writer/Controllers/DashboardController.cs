@@ -30,7 +30,7 @@ namespace Core_Portfolio.Areas.Writer.Controllers
 			string api = "917f65ac37cdc9b4105cae703cf11769";
 			string connection = "https://api.openweathermap.org/data/2.5/weather?q=istanbul&mode=xml&lang=tr&units=metric&appid=" + api;
 			XDocument document = XDocument.Load(connection);
-			ViewBag.v5 = document.Descendants("feels_like").ElementAt(0).Attribute("value").Value;
+			ViewBag.v5 = document.Descendants("temperature").ElementAt(0).Attribute("max").Value;
 
 
 
