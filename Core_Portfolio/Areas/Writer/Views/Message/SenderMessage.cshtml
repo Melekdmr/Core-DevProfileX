@@ -1,17 +1,17 @@
 ﻿@using EntityLayer.Concrete
 @model List<WriterMessage>
+
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "SenderMessage";
     Layout = "~/Views/Shared/_WriterLayout.cshtml";
 }
-@* @{
-    string color = "";
-} *@
+
+
 
 <div class="col-lg-12 grid-margin stretch-card">
     <div class="card">
         <div class="card-body">
-            <h4 class="card-title">Gelen Kutusu 📩</h4>
+            <h4 class="card-title">Giden Kutusu 📥</h4>
 
             <div class="table-responsive">
                 <table class="table">
@@ -20,7 +20,8 @@
                             <th>#</th>
                             <th>Konu</th>
                             <th>Gönderen</th>
-              
+                            <th>Tarih</th>
+
                             <th>Detaylar</th>
 
                         </tr>
@@ -28,18 +29,14 @@
                     <tbody>
                         @foreach (var item in Model)
                         {
-                           @*  if (item.WriterMessageID == "Eğitim Duyurusu") color = "badge badge-danger";
-                            if (item.WriterMessageID == "Kariyer Fırsatları") color = "badge badge-success";
-                            if (item.WriterMessageID == "Araç ve Kütüphane") color = "badge badge-info";
-                            if (item.WriterMessageID == "Güvenlik Duyurusu") color = "badge badge-warning";
-                            if (item.WriterMessageID == "Framework Tanıtımı") color = "badge badge-dark";
-                            if (item.WriterMessageID == "Kamp Duyurusu") color = "badge badge-warning"; *@
-                            <tr>     
+                           
+                            <tr>
                                 <th>@item.WriterMessageID</th>
                                 <td>@item.Subject</td>
+                                <td>@item.Sender</td>
                                 <td>@(((DateTime)item.Date).ToString("dd-MMM-yyyy"))</td>
-                     
-                                <td><a href="/Writer/Default/AnnouncementDetails/@item.WriterMessageID" class="btn btn-outline-primary">Mesajı Gör</a></td>
+
+                                <td><a href="/Writer/Message/MessageDetails/@item.WriterMessageID" class="btn btn-outline-primary">Mesajı Gör</a></td>
                             </tr>
                         }
 
@@ -49,4 +46,5 @@
         </div>
     </div>
 </div>
+
 

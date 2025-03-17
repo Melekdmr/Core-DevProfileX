@@ -20,12 +20,26 @@ namespace Core_Portfolio.Areas.Writer.Controllers
 			_userManager = userManager;
 		}
 
-		public async Task<IActionResult > Index(string p)
+		public async Task<IActionResult > ReceiverMessage(string p)
 		{
 			var values = await _userManager.FindByNameAsync(User.Identity.Name);
 			p = values.Email;
-			var messageList = writerMessageManager.TGetbyFilter(p);
+			var messageList = writerMessageManager.GetListReceiverMessage(p);
 			return View(messageList);
+		}
+
+		public async Task<IActionResult> SenderMessage(string p)
+		{
+			var values = await _userManager.FindByNameAsync(User.Identity.Name);
+			p = values.Email;
+			var messageList = writerMessageManager.GetListSenderMessage(p);
+			return View(messageList);
+		}
+		[HttpGet]
+		public IActionResult MessageDetails(int id)
+		{
+			WriterMessage writerMessage= writerMessageManager.TGetByID(id);
+			return View(writerMessage);
 		}
 	}
 }
