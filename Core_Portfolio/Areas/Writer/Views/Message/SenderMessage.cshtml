@@ -19,7 +19,7 @@
                         <tr>
                             <th>#</th>
                             <th>Konu</th>
-                            <th>Gönderen</th>
+                            <th>Alıcı</th>
                             <th>Tarih</th>
 
                             <th>Detaylar</th>
@@ -33,10 +33,10 @@
                             <tr>
                                 <th>@item.WriterMessageID</th>
                                 <td>@item.Subject</td>
-                                <td>@item.Sender</td>
+                                <td>@item.ReceiverName</td>
                                 <td>@(((DateTime)item.Date).ToString("dd-MMM-yyyy"))</td>
 
-                                <td><a href="/Writer/Message/MessageDetails/@item.WriterMessageID" class="btn btn-outline-primary">Mesajı Gör</a></td>
+                                <td><a href="/Writer/Message/ReceiverMessageDetails1/@item.WriterMessageID" class="btn btn-outline-primary">Mesajı Gör</a></td>
                             </tr>
                         }
 
