@@ -36,9 +36,9 @@ namespace Core_Portfolio.Areas.Writer.Controllers
 
 			//statistics
 			Context c = new Context();
-			ViewBag.v1 = 0;
+			ViewBag.v1 = c.WriterMessages.Where(x=>x.Receiver==values.Email).Count();
 			ViewBag.v2 = c.Announcements.Count();
-			ViewBag.v3 = 0;
+			ViewBag.v3 = c.Users.Count();
 			ViewBag.v4 = c.Services.Count();
 
 			return View();
