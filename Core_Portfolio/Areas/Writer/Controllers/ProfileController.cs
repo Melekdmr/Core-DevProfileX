@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace Core_Portfolio.Areas.Writer.Controllers
 {
 	[Area("Writer")]
+	[Route("Writer/[controller]/[action]")]
 	public class ProfileController : Controller
 	{
 		private readonly UserManager<WriterUser> _userManager;
@@ -45,7 +46,7 @@ namespace Core_Portfolio.Areas.Writer.Controllers
 			var result = await _userManager.UpdateAsync(user);
 			if (result.Succeeded)
 			{
-				return Redirect("~/DefaultController1/Index");
+				return Redirect("~/Login/Index");
 			}
 			return View();
 		}

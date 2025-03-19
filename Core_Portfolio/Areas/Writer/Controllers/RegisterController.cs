@@ -8,6 +8,7 @@ using System.Security.Principal;
 namespace Core_Portfolio.Areas.Writer.Controllers
 {
 	[Area("Writer")]
+	[Route("Writer/[controller]/[action]")]
 	public class RegisterController : Controller
 	/* UserManager<WriterUser> gibi bağımlılıklar (service, repository, database context vb.)
 	 * doğrudan new anahtar kelimesiyle oluşturulmaz.Bunun yerine, constructor içinde 

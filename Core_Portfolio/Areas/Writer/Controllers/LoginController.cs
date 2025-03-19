@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace Core_Portfolio.Areas.Writer.Controllers
 {
 	[Area("Writer")]
+	[Route("Writer/[controller]/[action]")]
 	public class LoginController : Controller
 	{
 		private readonly SignInManager<WriterUser> _signInManager;
@@ -30,7 +31,7 @@ namespace Core_Portfolio.Areas.Writer.Controllers
 				{
 					//RedirectToAction kullanıldığında, ASP.NET Core yalnızca mevcut "area" içinde
 					//controller arar (eğer bir area içindeyseniz).
-					return Redirect("~/DefaultController1/Index");
+					return RedirectToAction("Index","Dashboard");
 
 
 				}
