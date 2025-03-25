@@ -1,0 +1,64 @@
+﻿@using EntityLayer.Concrete
+@model List<Message>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
+}
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+<div class="card-header border-0">
+    <h3 class="mb-0">İletişim Kutusu</h3>
+</div>
+<!-- Light table -->
+<div class="table-responsive">
+    <table class="table align-items-center table-flush">
+        <thead class="thead-light">
+
+
+            <tr>
+                <th scope="col" class="sort" data-sort="name">#</th>
+                <th scope="col" class="sort" data-sort="budget">Gönderen</th>
+           
+                <th scope="col" class="sort" data-sort="status">Tarih</th>
+                <th scope="col" class="sort" data-sort="status">Sil</th>
+                <th scope="col" class="sort" data-sort="status">Mesajı Gör</th>
+   
+
+            </tr>
+
+        </thead>
+        <tbody class="list">
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <th>
+                        @item.MessageId
+                    </th>
+                    <th class="budget">
+                        @item.Name
+                    </th>
+
+                    <th>
+                        @item.Date.ToShortDateString()
+                    </th>
+                    <td>
+                        <a href="/Contact/DeleteContact/@item.MessageId/" class="btn btn-danger">
+                            <i class="fa fa-trash"></i> Sil
+                        </a>
+                    </td>
+                    <td>
+                        <a href="/Contact/ContactDetails/@item.MessageId/" class="btn btn-success">
+                            <i class="fa fa-edit"></i> Mesajı Gör
+                        </a>
+                    </td>
+
+
+                </tr>
+            }
+        </tbody>
+
+    </table>
+
+</div>
+

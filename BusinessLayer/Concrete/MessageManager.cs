@@ -30,7 +30,7 @@ namespace BusinessLayer.Concrete
 
 		public void TDelete(Message t)
 		{
-			throw new NotImplementedException();
+			_messageDal.Delete(t);
 		}
 
 		public List<Message> TGetbyFilter()
@@ -40,7 +40,7 @@ namespace BusinessLayer.Concrete
 
 		public Message TGetByID(int id)
 		{
-			throw new NotImplementedException();
+			return _messageDal.GetByID(id);
 		}
 
 		public void TUpdate(Message t)
