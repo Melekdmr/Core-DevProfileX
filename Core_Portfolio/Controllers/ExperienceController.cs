@@ -10,9 +10,6 @@ namespace Core_Portfolio.Controllers
 		ExperienceManager experienceManager = new ExperienceManager(new EfExperienceDal());
 		public IActionResult Index()
 		{
-			ViewBag.v1 = "Deneyim Listesi";
-			ViewBag.v2 = "Deneyimler";
-			ViewBag.v3 = "Deneyim Listesi";
 			var values = experienceManager.Getlist();
 			return View(values);
 		}
@@ -20,9 +17,7 @@ namespace Core_Portfolio.Controllers
 		[HttpGet]
 		public IActionResult AddExperience()
 		{
-			ViewBag.v1 = "Deneyim Ekleme";
-			ViewBag.v2 = "Deneyimler";
-			ViewBag.v3 = "Deneyim Ekleme";
+			
 			return View();
 		}
 		[HttpPost]
@@ -40,9 +35,6 @@ namespace Core_Portfolio.Controllers
 		[HttpGet]
 		public IActionResult EditExperience(int id)
 		{
-			ViewBag.v1 = "Düzenleme";
-			ViewBag.v2 = "Deneyimler";
-			ViewBag.v3 = "Deneyim Güncelleme";
 			var values = experienceManager.TGetByID(id);
 
 			return View(values);
@@ -52,9 +44,7 @@ namespace Core_Portfolio.Controllers
 		public IActionResult EditExperience(Experience experience)
 		{
 
-			ViewBag.v1 = "Düzenleme";
-			ViewBag.v2 = "Yetenekler";
-			ViewBag.v3 = "Yetenek Güncelleme";
+			
 
 			experienceManager.TUpdate(experience);
 

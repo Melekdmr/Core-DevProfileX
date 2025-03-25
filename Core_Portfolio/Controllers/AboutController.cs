@@ -11,9 +11,7 @@ namespace Core_Portfolio.Controllers
 		[HttpGet]
 		public IActionResult Index()
 		{
-			ViewBag.v1 = "Düzenleme";
-			ViewBag.v2 = "Hakkımda";
-			ViewBag.v3 = "Hakkımda Düzenleme";
+
 			var values = aboutManager.TGetByID(1);
 			return View(values);
 		}

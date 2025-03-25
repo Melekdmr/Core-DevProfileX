@@ -11,9 +11,7 @@ namespace Core_Portfolio.Controllers
 		SkillManager skillManager = new SkillManager(new EfSkillDal());
 		public IActionResult Index()
 		{
-			ViewBag.v1 = "Yetenek Listesi";
-			ViewBag.v2 = "Yetenekler";
-			ViewBag.v3 = "Yetenek Listesi";
+		
 			var values = skillManager.Getlist();
 
 			return View(values);
@@ -21,9 +19,7 @@ namespace Core_Portfolio.Controllers
 		[HttpGet]
 		public IActionResult AddSkill()
 		{
-			ViewBag.v1 = "Yetenek Ekleme";
-			ViewBag.v2 = "Yetenekler";
-			ViewBag.v3 = "Yetenek Ekleme";
+		
 			return View();
 
 		}
@@ -44,9 +40,7 @@ namespace Core_Portfolio.Controllers
 		[HttpGet]
 		public IActionResult EditSkill(int id)
 		{
-			ViewBag.v1 = "Düzenleme";
-			ViewBag.v2 = "Yetenekler";
-			ViewBag.v3 = "Yetenek Güncelleme";
+			
 			var values = skillManager.TGetByID(id);
 		
 			return View(values);
@@ -56,9 +50,7 @@ namespace Core_Portfolio.Controllers
 		public IActionResult EditSkill(Skill skill)
 		{
 
-			ViewBag.v1 = "Düzenleme";
-			ViewBag.v2 = "Yetenekler";
-			ViewBag.v3 = "Yetenek Güncelleme";
+	
 
 			skillManager.TUpdate(skill);
 
