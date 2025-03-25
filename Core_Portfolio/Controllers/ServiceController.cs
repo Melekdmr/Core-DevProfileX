@@ -11,18 +11,14 @@ namespace Core_Portfolio.Controllers
 		ServiceManager serviceManager = new ServiceManager(new EfServiceDal());
 		public IActionResult Index()
 		{
-			ViewBag.v1 = "Hizmet Listesi";
-			ViewBag.v2 = "Hizmetler";
-			ViewBag.v3 = "Hizmet Listesi";
+			
 			var values = serviceManager.Getlist();
 			return View(values);
 		}
 		[HttpGet]
 		public IActionResult AddService()
 		{
-			ViewBag.v1 = "Yetenek Ekleme";
-			ViewBag.v2 = "Yetenekler";
-			ViewBag.v3 = "Yetenek Ekleme";
+	
 			return View();
 
 		}
@@ -43,9 +39,7 @@ namespace Core_Portfolio.Controllers
 		[HttpGet]
 		public IActionResult EditService(int id)
 		{
-			ViewBag.v1 = "Düzenleme";
-			ViewBag.v2 = "Yetenekler";
-			ViewBag.v3 = "Yetenek Güncelleme";
+	
 			var values = serviceManager.TGetByID(id);
 
 			return View(values);
@@ -55,9 +49,7 @@ namespace Core_Portfolio.Controllers
 		public IActionResult EditService(Service service)
 		{
 
-			ViewBag.v1 = "Düzenleme";
-			ViewBag.v2 = "Yetenekler";
-			ViewBag.v3 = "Yetenek Güncelleme";
+			
 
 			serviceManager.TUpdate(service);
 

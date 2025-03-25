@@ -1,7 +1,7 @@
 ﻿@model EntityLayer.Concrete.Service
  @{ 
      ViewData["Title"] = "AddService";
-    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
 }
 
 <div class="card-header border-0">
@@ -20,10 +20,10 @@
     <label>Resim Yolu</label>
     @Html.TextBoxFor(x => x.ImageUrl, new { @class = "form-control" })
     <br />
-  
 
-   
-    <button class="btn btn-info">Kaydet</button>
+
+
+    <button class="btn btn-success">Kaydet</button>
 }
 
 
