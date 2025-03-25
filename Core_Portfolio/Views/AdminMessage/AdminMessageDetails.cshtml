@@ -1,0 +1,40 @@
+﻿@model EntityLayer.Concrete.WriterMessage
+@{
+    ViewData["Title"] = "AdminMessageDetails";
+    Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
+}
+
+<div class="card-header border-0">
+    <h3 class="mb-0">Mesaj Detay Sayfası</h3>
+</div>
+@using (Html.BeginForm("AdminMessageDetails", "AdminMessage", FormMethod.Get))
+{
+    @Html.HiddenFor(x => x.WriterMessageID)
+    <br />
+    @Html.Label("Title", "Başlık")
+
+    @Html.TextBoxFor(x => x.Subject, new { @class = "form-control" })
+    <br />
+    @Html.Label("Title", "Gönderen")
+    @Html.TextBoxFor(x => x.Subject, new { @class = "form-control" })
+    <br />
+    @Html.Label("Title", "Alıcı")
+
+    @Html.TextBoxFor(x => x.ReceiverName, new { @class = "form-control" })
+    <br />
+
+   
+    <label>Tarih</label>
+    @Html.TextBoxFor(x => x.Date, new { @class = "form-control" })
+    <br />
+
+
+    <label>Mesaj</label>
+    @Html.TextAreaFor(x => x.Content, 10, 3, new { @class = "form-control" })
+    <br />
+    <a asp-action="ReceiverMessageList" class="btn btn-primary mr-2">Admin Gelen Mesajlar</a>
+    <a asp-action="SendMessageList" class="btn btn-warning mr-2">Admin Giden Mesajlar</a>
+    
+}
+
+

@@ -1,0 +1,70 @@
+﻿@using EntityLayer.Concrete
+@model List<WriterMessage>
+@{
+    ViewData["Title"] = "SendMessageList";
+    Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
+}
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+<div class="card-header border-0">
+    <h3 class="mb-0">Yazar Admin Giden Kutusu</h3>
+</div>
+<!-- Light table -->
+<div class="table-responsive">
+    <table class="table align-items-center table-flush">
+        <thead class="thead-light">
+
+
+            <tr>
+                <th scope="col" class="sort" data-sort="name">#</th>
+                <th scope="col" class="sort" data-sort="budget">Alıcı</th>
+                <th scope="col" class="sort" data-sort="status">Konu</th>
+                <th scope="col" class="sort" data-sort="status">Tarih</th>
+
+                <th scope="col" class="sort" data-sort="status">Sil</th>
+                <th scope="col" class="sort" data-sort="status">Mesajı Gör</th>
+
+
+            </tr>
+
+        </thead>
+        <tbody class="list">
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @item.WriterMessageID
+                    </td>
+                    <td class="budget">
+                        @item.ReceiverName
+                    </td>
+                    <td>
+                        @item.Subject
+                    </td>
+
+                    <td>
+                        @item.Date.ToShortDateString()
+                    </td>
+                    <td>
+                        <a href="/AdminMessage/AdminMessageDelete/@item.WriterMessageID/" class="btn btn-danger">
+                            <i class="fa fa-trash"></i> Sil
+                        </a>
+                    </td>
+                    <td>
+                        <a href="/AdminMessage/AdminMessageDetails/@item.WriterMessageID/" class="btn btn-success">
+                            <i class="fa fa-edit"></i> Mesajı Gör
+                        </a>
+                    </td>
+
+
+                </tr>
+            }
+        </tbody>
+
+    </table>
+
+</div>
+
+
+
