@@ -18,10 +18,12 @@
                     <thead class="thead-dark">
                         <tr>
                             <th scope="col" class="sort" data-sort="name">Proje</th>
+                     
+                     
                             <th scope="col" class="sort" data-sort="budget">Proje URL</th>
                             <th scope="col" class="sort" data-sort="status">Durum</th>
                             <th scope="col">Görseller</th>
-                            <th scope="col" class="sort" data-sort="completion">Tamamlanma Oranı</th>
+                            <th scope="col" class="sort" data-sort="completion">Tam. Oranı</th>
                             <th scope="col">Sil</th>
                             <th scope="col">Düzenle</th>
                         </tr>
@@ -32,13 +34,12 @@
                             <tr>
                                 <th scope="row">
                                     <div class="media align-items-center">
-                                        <a href="#" class="avatar rounded-circle mr-3">
-                                            <img alt="Image placeholder" src="@item.Platform">
-                                        </a>
-                                        <div class="media-body">
+                                        <img class="avatar avatar-sm rounded-circle preview-img" src="@item.Platform" onclick="enlargeImage(this)" style="margin-right: 10px;">
+                                        <div class="media-body" style="margin-left: 10px;">
                                             <span class="name mb-0 text-sm">@item.Name</span>
                                         </div>
                                     </div>
+
                                 </th>
                                 <td class="budget">
                                     github.com/Melekdmr/
