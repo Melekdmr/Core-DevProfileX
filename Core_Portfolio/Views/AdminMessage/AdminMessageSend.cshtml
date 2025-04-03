@@ -1,0 +1,68 @@
+﻿@model EntityLayer.Concrete.WriterMessage
+@{
+    ViewData["Title"] = "AdminMessageSend";
+    Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
+}
+
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h3 class="mb-4">Yeni Mesaj Gönderme Paneli</h3> <!-- mb-4 ile alt boşluk eklendi -->
+
+            <form class="forms-sample" method="post">
+                <div class="form-group">
+                    @Html.Label("Konu", "Mesaj Başlığı")
+                    @Html.TextAreaFor(x => x.Subject, new
+                        {
+                            @class = "form-control p-3", 
+                             rows = "2"
+                                })
+                </div>
+
+                <div class="form-group">
+                    <label>Alıcı</label>
+                    @Html.TextAreaFor(x => x.Receiver, new
+                        {
+                            @class = "form-control p-3",
+                            rows = "2"
+                        })
+                </div>
+                
+                <div class="form-group">
+                    <label>Mesaj</label>
+                    @Html.TextAreaFor(x => x.Content, new
+                        {
+                            @class = "form-control p-3",
+                            id = "Content",
+                            rows = "8" 
+                                })
+                </div>
+
+                <div class="d-flex gap-2">
+                    <!-- Butonlar arası boşluk için -->
+                    <button type="submit" class="btn btn-success">Gönder</button>
+                    <button type="button" class="btn btn-dark">İptal</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<style>
+    /* Özel stiller */
+    .form-control {
+        border-radius: 4px !important;
+        padding: 12px !important; /* Daha geniş iç boşluk */
+        margin-bottom: 16px !important; /* Alt boşluk */
+        border: 1px solid #ced4da !important;
+    }
+
+    #Content {
+        min-height: 200px !important;
+        resize: vertical; /* Kullanıcı boyutlandırabilsin */
+    }
+
+    .card {
+        padding: 20px; /* Kart iç boşluk */
+    }
+</style>
