@@ -30,7 +30,7 @@ public class TestimonialManager:ITestimonialService
 
 		public void TDelete(Testimonial t)
 		{
-			throw new NotImplementedException();
+			 _testimonialDal.Delete(t);
 		}
 
 		public List<Testimonial> TGetbyFilter()
@@ -40,12 +40,12 @@ public class TestimonialManager:ITestimonialService
 
 		public Testimonial TGetByID(int id)
 		{
-			throw new NotImplementedException();
+			 return _testimonialDal.GetByID(id);
 		}
 
 		public void TUpdate(Testimonial t)
 		{
-			throw new NotImplementedException();
+			_testimonialDal.Update(t);
 		}
 	}
 }
