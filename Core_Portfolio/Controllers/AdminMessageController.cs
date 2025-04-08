@@ -26,6 +26,7 @@ namespace Core_Portfolio.Controllers
 			var values = writerMessageManager.TGetByID(id);
 			return View(values);
 		}
+
 		public IActionResult AdminMessageDelete(int id)
 		{
 			var values = writerMessageManager.TGetByID(id);
