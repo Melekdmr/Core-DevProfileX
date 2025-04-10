@@ -1,0 +1,82 @@
+﻿@using EntityLayer.Concrete
+@model List<SocialMedia>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
+}
+
+<link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.32/dist/sweetalert2.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.32/dist/sweetalert2.all.min.js"></script>
+
+<div class="row">
+    <div class="col">
+        <div class="card bg-default shadow">
+            <div class="card-header bg-transparent border-0">
+                <h3 class="text-white mb-0">Sosyal Medya Hesaplarım</h3>
+            </div>
+            <div class="table-responsive">
+                <table class="table align-items-center table-dark table-flush">
+                    <thead class="thead-dark">
+                        <tr>
+                       
+
+
+                            <th scope="col" class="sort" data-sort="budget">#</th>
+                            <th scope="col" class="sort" data-sort="status">Başlık</th>
+                            <th scope="col" class="sort" data-sort="status">Durum</th>
+                            <th scope="col">Sil</th>
+                            <th scope="col" class="sort" data-sort="completion">Güncelle</th>
+                         
+                      
+                        </tr>
+                    </thead>
+                    <tbody class="list">
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <th scope="row">
+                                    <div class="media align-items-center">
+                                   
+                                        <div class="media-body" style="margin-left: 10px;">
+                                            <span class="name mb-0 text-sm">@item.SocialMediaId</span>
+                                        </div>
+                                    </div>
+
+                                </th>
+                                
+                                <td>
+                                    <span class="badge badge-dot mr-4">
+                                        <i class="bg-success"></i>
+                                        <span class="status">@item.Name</span>
+                                    </span>
+                                </td>
+                                <td>
+                                    <span class="badge badge-dot mr-4">
+                                        <i class="bg-success"></i>
+                                        <span class="status">@item.Status</span>
+                                    </span>
+                                </td>
+                     
+
+                         
+                                <td>
+                                    <a href="/SocialMedia/DeleteSocialMedia/@item.SocialMediaId/" class="btn btn-outline-danger">
+                                        <i class="fa fa-trash"></i> Sil
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="/SocialMedia/EditSocialMedia/@item.SocialMediaId/" class="btn btn-outline-success">
+                                        <i class="fa fa-edit"></i> Düzenle
+                                    </a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <br />
+        <a href="/SocialMEdia/AddSocialMedia/" class="btn btn-primary">Yeni Hesap Ekle</a>
+    </div>
+</div>
+
