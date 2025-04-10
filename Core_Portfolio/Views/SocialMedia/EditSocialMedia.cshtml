@@ -1,0 +1,39 @@
+﻿@model EntityLayer.Concrete.SocialMedia
+@{
+    ViewData["Title"] = "EditSocialMedia";
+    Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
+}
+
+
+
+<div class="card-header border-0">
+    <h3 class="mb-0">Hesap Düzenleme Sayfası</h3>
+</div>
+@using (Html.BeginForm("EditSocialMedia", "SocialMedia", FormMethod.Post))
+{
+    @Html.HiddenFor(x => x.SocialMediaId)
+    <br />
+    @Html.Label("Title", "Hesap Başlığı")
+
+    @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+    <br />
+
+
+
+    <label>Bağlantı</label>
+    @Html.TextBoxFor(x => x.Url, new { @class = "form-control" })
+    <br />
+
+    <label>İkon</label>
+    @Html.TextBoxFor(x => x.Icon, new { @class = "form-control" })
+    <br />
+    <label>Durum</label>
+    @Html.DropDownListFor(x => x.Status,
+                                          (SelectList)ViewBag.StatusList,
+                                          "Durum Seçin",
+                                          new { @class = "form-control" })
+    <br />
+
+    <button class="btn btn-info">Güncelle</button>
+}
+

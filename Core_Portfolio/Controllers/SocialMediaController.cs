@@ -18,6 +18,7 @@ namespace Core_Portfolio.Controllers
 		[HttpGet]
 		public IActionResult AddSocialMedia()
 		{
+
 			ViewBag.StatusList = new SelectList(new List<SelectListItem>
 		{
 			new SelectListItem { Text = "Aktif", Value = "true" },
@@ -44,9 +45,16 @@ namespace Core_Portfolio.Controllers
 		public IActionResult EditSocialMedia(int id)
 		{
 			var values = sociaMediaManager.TGetByID(id);
-		
-	
+
+			// Durumlar için aktif/pasif seçeneklerini listeliyoruz
+			ViewBag.StatusList = new SelectList(new List<SelectListItem>
+	    {
+		new SelectListItem { Text = "Aktif", Value = "true" },
+	 	new SelectListItem { Text = "Pasif", Value = "false" }
+	   }, "Value", "Text", values.Status.ToString());
+   
 			return View(values);
+
 		}
 		[HttpPost]
 		public IActionResult EditSocialMedia(SocialMedia p)
