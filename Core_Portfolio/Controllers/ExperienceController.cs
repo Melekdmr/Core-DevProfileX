@@ -19,7 +19,6 @@ namespace Core_Portfolio.Controllers
 		[HttpGet]
 		public IActionResult AddExperience()
 		{
-			
 			return View();
 		}
 		[HttpPost]
