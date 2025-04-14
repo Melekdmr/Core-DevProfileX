@@ -161,8 +161,9 @@
                 <div class="content-wrapper">
      
               @RenderBody()
-                    @await RenderSectionAsync("Scripts")
-                </div>
+                    @await RenderSectionAsync("Scripts",required:false) @* Her sayfada script yazmak zorunda değilsen: Bazı view’lerde JavaScript yoktur, bu durumda gereksiz yere
+                    @section Scripts {} açmak istemezsin. O yüzden false yaparsın.
+                </div> *@
                 <!-- content-wrapper ends -->
                 <!-- partial:../../partials/_footer.html -->
                 <footer class="footer">
