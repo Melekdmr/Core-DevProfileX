@@ -2,9 +2,11 @@
 using DataAccessLayer.EntityFramework;
 using Microsoft.AspNetCore.Mvc;
 using EntityLayer.Concrete;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Core_Portfolio.Controllers
 {
+	[Authorize(Roles ="Admin")] //Bu sayfaya sadece rolü admin olan kullanıcılar erişebilir.
 	public class ExperienceController : Controller
 	{
 		ExperienceManager experienceManager = new ExperienceManager(new EfExperienceDal());
