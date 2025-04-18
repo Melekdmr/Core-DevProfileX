@@ -11,7 +11,7 @@ using ValidationResult = FluentValidation.Results.ValidationResult;
 
 namespace Core_Portfolio.Controllers
 {
-	public class PortfolioController1 : Controller
+	public class PortfolioController1 : Controller  
 	{
 		PortfolioManager portfolioManager = new PortfolioManager(new EfPortfolioDal());
 
