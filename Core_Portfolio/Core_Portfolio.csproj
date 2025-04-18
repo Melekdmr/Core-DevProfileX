@@ -46,10 +46,10 @@
 
 	<ItemGroup>
 	  <Folder Include="Areas\Writer\Data\" />
-	  <Folder Include="wwwroot\userImage\" />
 	  <Folder Include="wwwroot\skydash\.git\objects\info\" />
 	  <Folder Include="wwwroot\skydash\.git\objects\pack\" />
 	  <Folder Include="wwwroot\skydash\.git\refs\tags\" />
+	  <Folder Include="wwwroot\userImage\" />
 	</ItemGroup>
 
 	<ItemGroup>

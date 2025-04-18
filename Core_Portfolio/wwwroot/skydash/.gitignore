@@ -48,13 +48,3 @@ Thumbs.db
 *.mov
 *.wmv
 
-# appsettings dosyalarý
-appsettings.json
-appsettings.Development.json
-appsettings.*.json
-
-# Visual Studio dosyalarý
-.vs/
-bin/
-obj/
-*.user

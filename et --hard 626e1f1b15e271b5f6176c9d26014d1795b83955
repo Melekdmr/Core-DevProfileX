@@ -1,0 +1,229 @@
+[33mcommit 4570c488dc0224fcdf88cc51cb16ace4d57d5c4b[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m
+Author: Melekdmr <melekdmrr01@gmail.com>
+Date:   Fri Apr 18 15:34:24 2025 +0300
+
+    Committing my local changes before pulling
+
+[33mcommit 626e1f1b15e271b5f6176c9d26014d1795b83955[m
+Author: Melekdmr <melekdmrr01@gmail.com>
+Date:   Fri Apr 18 15:31:48 2025 +0300
+
+    Updated .gitignore to exclude appsettings files
+
+[33mcommit 88c06034899b0cbf747cbe87e3baa04efd86d0b5[m
+Author: Melekdmr <melekdmrr01@gmail.com>
+Date:   Fri Apr 18 15:27:50 2025 +0300
+
+    Removed appsettings from version control
+
+[33mcommit 5c00255536e0c790a6605acd624c8d22fa471acd[m
+Author: Melekdmr <melekdmrr01@gmail.com>
+Date:   Tue Apr 15 00:00:34 2025 +0300
+
+    feat: Add 'Deneyim Ajax' link to sidebar with mdi-tools icon
+
+[33mcommit 295dc52c1b6f3733eaff2b4250ab8481f90abcc4[m
+Author: Melekdmr <melekdmrr01@gmail.com>
+Date:   Mon Apr 14 23:59:35 2025 +0300
+
+    feat: Added full AJAX-based CRUD UI to Experience2 Index view
+    
+    - List, add, get by ID, and delete actions using jQuery AJAX
+    - Dynamically renders experiences into HTML tables
+    - Uses JSON format for data exchange with controller
+
+[33mcommit 6d0d06f41b3c206a75e17701df0118efe7a1d6d0[m
+Author: Melekdmr <melekdmrr01@gmail.com>
+Date:   Mon Apr 14 23:59:11 2025 +0300
+
+    feat: Add Ajax-based JSON CRUD actions to Experience2Controller
+
+[33mcommit 380f5de190e6bc0b72910d3d90c892dea55f515e[m
+Author: Melekdmr <melekdmrr01@gmail.com>
+Date:   Mon Apr 14 18:43:32 2025 +0300
+
+    Docs: Add inline comments to Program.cs for better code readability
+
+[33mcommit 420cd589151c8b47a57c61ff688ffb9d6cf9af55[m
+Author: Melekdmr <melekdmrr01@gmail.com>
+Date:   Mon Apr 14 18:42:56 2025 +0300
+
+    Fix: Re-enabled script rendering in _NewAdminLayout by adding @RenderSectionAsync("Scripts") to ensure view-level JS executes properly
+
+[33mcommit 29c134920784674d11fbe988ddc2f62ac9ac69cb[m
+Author: Melekdmr <melekdmrr01@gmail.com>
+Date:   Mon Apr 14 18:41:49 2025 +0300
+
+    Implement AJAX-based WriterUser list retrieval with JSON response
+
+[33mcommit 4732a5337a288acdfca405ff8f5d805d50d5807d[m
+Author: Melekdmr <melekdmrr01@gmail.com>
+Date:   Mon Apr 14 18:41:01 2025 +0300
+
+    Add [AllowAnonymous] attribute to DefaultController1
+
+[33mcommit 2abf132bd082c5ee87a8350cd08991b9468857ef[m
+Author: Melekdmr <melekdmrr01@gmail.com>
+Date:   Mon Apr 14 18:40:28 2025 +0300
+
+    Implemented WriterUser in all layers (Entity, DAL, BLL, UI)
+
+[33mcommit 6a1ff14776d51ce0a2b00d8565652432a7bca208[m
+Author: Melekdmr <melekdmrr01@gmail.com>
+Date:   Mon Apr 14 18:39:48 2025 +0300
+
+    Implemented WriterUser in all layers (Entity, DAL, BLL, UI)
+
+[33mcommit 9c2e5d298e0f65f5f2b756537fabc157fd8381f3[m
+Author: Melekdmr <melekdmrr01@gmail.com>
+Date:   Mon Apr 14 11:38:40 2025 +0300
+
+    Apply role-based authorization for Admin access
+
+[33mcommit 48d8294e02ab1db5f4a0f657ec772ff012dc6cba[m
+Author: Melekdmr <melekdmrr01@gmail.com>
+Date:   Mon Apr 14 11:36:11 2025 +0300
+
+    Allow anonymous access to LoginController to bypass global authorization
+
+[33mcommit fc87991071102637e2151f61b1c101863c001511[m
+Author: Melekdmr <melekdmrr01@gmail.com>
+Date:   Mon Apr 14 11:35:54 2025 +0300
+
+    Add custom 401 Access Denied error page
+
+[33mcommit a38cbdd80580d15a196d221bdbe633024727558f[m
+Author: Melekdmr <melekdmrr01@gmail.com>
+Date:   Mon Apr 14 11:35:08 2025 +0300
+
+    Add custom 401 Access Denied error page
+
+[33mcommit 90aad2b95800f6708955abcfa19a4d976bc769f6[m
+Author: Melekdmr <melekdmrr01@gmail.com>
+Date:   Mon Apr 14 11:34:28 2025 +0300
+
+    Add global authorization policy and configure cookie settings (login, access denied, expiration)
+
+[33mcommit 3a6bdde277e4b5daf2ded0532067c758bad3282a[m
+Author: Melekdmr <melekdmrr01@gmail.com>
+Date:   Thu Apr 10 23:03:29 2025 +0300
+
+    fix: sidebar active menu conflicts
+    - Fixed all-items-active issue
+    - Added JS-based active selection
+    - CSS optimizations
+
+[33mcommit e8ba8ea73dc58932137dd1da81fca7b8788b70c7[m
+Author: Melekdmr <melekdmrr01@gmail.com>
+Date:   Thu Apr 10 22:25:30 2025 +0300
+
+    Add AdminNotificationList ViewComponent with static notification dropdown interface for dashboard alerts and notifications
+
+[33mcommit 8edacc023255d72873f2e93ae91ee38f303c7a2d[m
+Author: Melekdmr <melekdmrr01@gmail.com>
+Date:   Thu Apr 10 20:39:22 2025 +0300
+
+    Invoke AdminNavbarMessageList component asynchronously in navigation menu
+
+[33mcommit d335e3c941849ce89c495548ff8a5c14335f9207[m
+Author: Melekdmr <melekdmrr01@gmail.com>
+Date:   Thu Apr 10 20:38:56 2025 +0300
+
+    Check ImageUrl for null or empty and update from Users table if needed, with fallback to default image
+
+[33mcommit 253e78a06a479d05f6eb98a2ef382b00946a2a48[m
+Author: Melekdmr <melekdmrr01@gmail.com>
+Date:   Thu Apr 10 20:38:13 2025 +0300
+
+    Add nullable ImageUrl property to WriterMessage class and update database schema
+
+[33mcommit a116caf71096ec25d1265d22c8b906caf8eecad3[m
+Author: Melekdmr <melekdmrr01@gmail.com>
+Date:   Thu Apr 10 16:10:33 2025 +0300
+
+    Add SocialMediaList component to display social media links
+
+[33mcommit ffc841cb07e6517a14023229e0891972100677cc[m
+Author: Melekdmr <melekdmrr01@gmail.com>
+Date:   Thu Apr 10 16:10:01 2025 +0300
+
+    Remove unnecessary code and keep essential components for a streamlined page layout.
+
+[33mcommit 5668545923dbd6fd4013bd875b024b9739bb6391[m
+Author: Melekdmr <melekdmrr01@gmail.com>
+Date:   Thu Apr 10 16:09:22 2025 +0300
+
+    Add SocialMediaList view component to display a list of social media links with icons and URLs.
+
+[33mcommit 9a3a45cc78779e9fc12a39ca2137262ed3f111ae[m
+Author: Melekdmr <melekdmrr01@gmail.com>
+Date:   Thu Apr 10 16:08:09 2025 +0300
+
+    Add EditSocialMedia view with fields for Title, URL, Icon, and Status dropdown
+
+[33mcommit e6761d79d6c027d296a10de6cac39a1e232439ba[m
+Author: Melekdmr <melekdmrr01@gmail.com>
+Date:   Thu Apr 10 15:28:51 2025 +0300
+
+    Add dropdown list for 'Status' field in the view to select between 'Aktif' and 'Pasif' options.
+
+[33mcommit e12a948c8ff121a70bd063337334d5ccc984a49c[m
+Author: Melekdmr <melekdmrr01@gmail.com>
+Date:   Thu Apr 10 15:27:53 2025 +0300
+
+    Implement TUpdate method to update SocialMedia records using _socialMediaDal.
+
+[33mcommit e4a6242773f34200230ef7bee5fd5b47b27365cd[m
+Author: Melekdmr <melekdmrr01@gmail.com>
+Date:   Thu Apr 10 15:27:20 2025 +0300
+
+    Add dropdown list for 'Status' with 'Aktif' and 'Pasif' options in AddSocialMedia view.
+
+[33mcommit 831f0e772d0b6707417cca24f0ff823284285833[m
+Author: Melekdmr <melekdmrr01@gmail.com>
+Date:   Tue Apr 8 16:28:40 2025 +0300
+
+    Added "Testimonials" link to the sidebar menu
+
+[33mcommit c0020cbbae5db3c471f67222b84bda3c85b9619e[m
+Author: Melekdmr <melekdmrr01@gmail.com>
+Date:   Tue Apr 8 16:27:58 2025 +0300
+
+    Created the testimonial editing panel and added form elements: Client Name, Company, Image URL, Comment.
+
+[33mcommit d3030fba332b68d023c89e68767d2588a05bbb8a[m
+Author: Melekdmr <melekdmrr01@gmail.com>
+Date:   Tue Apr 8 14:44:18 2025 +0300
+
+    Add TestimonialController with CRUD operations (Index, Edit, Delete)
+
+[33mcommit 2718583e706aa9a5cd8c56add67f1e01c050e568[m
+Author: Melekdmr <melekdmrr01@gmail.com>
+Date:   Tue Apr 8 13:11:00 2025 +0300
+
+    Create AddSkill view with form inputs for title and value
+
+[33mcommit 2d46fd6aebdda25b2e967705563d3fc4708b4989[m
+Author: Melekdmr <melekdmrr01@gmail.com>
+Date:   Tue Apr 8 13:10:32 2025 +0300
+
+    Implement message sending: set static sender info and fetch receiver name from DB
+
+[33mcommit d936307e5ca43f7f45e782f2f41134a593ddaff1[m
+Author: Melekdmr <melekdmrr01@gmail.com>
+Date:   Thu Apr 3 16:00:58 2025 +0300
+
+     Added navigation links for received and sent messages
+
+[33mcommit 0b7d0ef7a35fbb1c9628be3c5ba74b1112e88790[m
+Author: Melekdmr <melekdmrr01@gmail.com>
+Date:   Thu Apr 3 16:00:35 2025 +0300
+
+    Added AdminMessageSend action for sending messages
+
+[33mcommit 0a8485e4a07eeb0c352eacaab4c898fc5ef10fc9[m
+Merge: e60d13a 4a9e996
+Author: Melekdmr <melekdmrr01@gmail.com>
+Date:   Thu Apr 3 16:00:03 2025 +0300
+
+    Merge branch 'master' of htt
