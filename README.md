@@ -25,7 +25,7 @@ Bu proje, ASP.NET Core 8.0 teknolojisiyle geliştirilmiş, çok katmanlı mimari
 # ✍️ Yazar Paneli Detayları
 - Profil Güncelleme: Yazarlar kendi adını, şifresini ve profil fotoğrafını (resim yükleme ile) düzenleyebilir.
 
- Mesajlaşma Sistemi: Yazarlara site sahibi (admin) tarafından mesaj gönderilebilir. Yazarlar da diğer yazarlara veya admin'e mesaj gönderebilir.
+ - Mesajlaşma Sistemi: Yazarlara site sahibi (admin) tarafından mesaj gönderilebilir. Yazarlar da diğer yazarlara veya admin'e mesaj gönderebilir.
 
 - İstatistik Paneli: Kullanıcıya özel yazdığı içerikler, aldığı mesaj sayısı gibi bilgiler özet halinde gösterilir.
 
