@@ -71,6 +71,7 @@ Bu proje, ASP.NET Core 8.0 teknolojisiyle geliştirilmiş, çok katmanlı mimari
 - ASP.NET Identity & Rol yönetimi
 
 - Ajax işlemleri
+- 
 - RESTful API
 
 - FluentValidation
@@ -86,6 +87,16 @@ Bu proje, ASP.NET Core 8.0 teknolojisiyle geliştirilmiş, çok katmanlı mimari
 - Repository Design Pattern
 
 - Authentication & Authorization
+
+  # 📽️ Portfolyo Uygulama Demosu
+  ![ ](https://raw.githubusercontent.com/Melekdmr/Core-DevProfileX/master/Media/Clipchamp-ezgif.com-video-to-gif-converter.gif)
+
+  
+
+
+
+  ## İletişim 📧
+🔗 Eğer proje hakkında bir sorunuz varsa, lütfen benimle iletişime geçin!
 
 
 
