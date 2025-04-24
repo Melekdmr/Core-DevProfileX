@@ -106,6 +106,25 @@ Bu proje, ASP.NET Core 8.0 teknolojisiyle geliştirilmiş, çok katmanlı mimari
     ![ ](https://github.com/Melekdmr/Core-DevProfileX/blob/master/Media/profile.png)
 
     # 📽️ Admin Paneli Görüntüleri
+   Admin Dashboard
+    ![ ](https://github.com/Melekdmr/Core-DevProfileX/blob/master/Media/dash.png)
+  Yetenek Listesi
+    ![ ](https://github.com/Melekdmr/Core-DevProfileX/blob/master/Media/skill.png)
+  Sosyal Medya Hesap Listesi
+    ![ ](https://github.com/Melekdmr/Core-DevProfileX/blob/master/Media/social.png)
+  Admin Öne Çıkanlar ve Üst Menü Mesaj Listesi 
+    ![ ](https://github.com/Melekdmr/Core-DevProfileX/blob/master/Media/onec%C4%B1ksonmes.png)
+  Admin Hizmetler ve Üst Menü Bildirim Kutusu
+    ![ ](https://github.com/Melekdmr/Core-DevProfileX/blob/master/Media/hizmetbildirim.png)
+  Admin İletişim ve Üst Menü Proje, Hesap Ve Deneyim Ekleme Sekmeleri
+    ![ ](https://github.com/Melekdmr/Core-DevProfileX/blob/master/Media/iletkutu_newproject.png)
+  Admin Gelen ve  Gönderilen Mesaj Detay Sayfası
+    ![ ](https://github.com/Melekdmr/Core-DevProfileX/blob/master/Media/messagedetail.png)
+  Ajax İşlemleri
+    ![ ](https://github.com/Melekdmr/Core-DevProfileX/blob/master/Media/ajax.png)
+  Admin Hata Sayfası
+     ![ ](https://github.com/Melekdmr/Core-DevProfileX/blob/master/Media/Ekran%20g%C3%B6r%C3%BCnt%C3%BCs%C3%BC%202025-04-24%20232730.png)
+  
   
 
 
