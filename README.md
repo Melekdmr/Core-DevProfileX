@@ -104,7 +104,9 @@ Bu proje, ASP.NET Core 8.0 teknolojisiyle geliştirilmiş, çok katmanlı mimari
    ![ ](https://github.com/Melekdmr/Core-DevProfileX/blob/master/Media/message.png)
   Yazar Profil Güncelleme
     ![ ](https://github.com/Melekdmr/Core-DevProfileX/blob/master/Media/profile.png)
-   
+
+    # 📽️ Admin Paneli Görüntüleri
+  
 
 
 
