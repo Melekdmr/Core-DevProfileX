@@ -71,7 +71,7 @@ Bu proje, ASP.NET Core 8.0 teknolojisiyle geliştirilmiş, çok katmanlı mimari
 - ASP.NET Identity & Rol yönetimi
 
 - Ajax işlemleri
-- 
+
 - RESTful API
 
 - FluentValidation
