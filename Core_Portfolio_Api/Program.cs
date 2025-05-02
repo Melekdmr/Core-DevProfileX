@@ -1,8 +1,18 @@
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-
 builder.Services.AddControllers();
+
+// CORS yapýlandýrmasýný ekleyin
+builder.Services.AddCors(options =>
+{
+	options.AddPolicy("AllowAll",
+		builder => builder
+			.AllowAnyOrigin()
+			.AllowAnyMethod()    // DELETE dahil tüm HTTP metodlarýna izin verir
+			.AllowAnyHeader());
+});
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -17,6 +27,9 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+// CORS middleware'ini etkinleþtirin (UseAuthorization'dan önce olmalý)
+app.UseCors("AllowAll");
 
 app.UseAuthorization();
 
