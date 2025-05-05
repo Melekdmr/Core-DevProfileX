@@ -108,6 +108,8 @@ Bu proje, ASP.NET Core 8.0 teknolojisiyle geliştirilmiş, çok katmanlı mimari
     # 📽️ Admin Paneli Görüntüleri
    Admin Dashboard
     ![ ](https://github.com/Melekdmr/Core-DevProfileX/blob/master/Media/dash.png)
+   Admin Dashboard Devam
+    ![ ](  https://github.com/Melekdmr/Core-DevProfileX/blob/master/Media/Ekran%20g%C3%B6r%C3%BCnt%C3%BCs%C3%BC%202025-05-05%20165925.png)
   Yetenek Listesi
     ![ ](https://github.com/Melekdmr/Core-DevProfileX/blob/master/Media/skill.png)
   Sosyal Medya Hesap Listesi
