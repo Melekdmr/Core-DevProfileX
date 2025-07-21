@@ -89,7 +89,7 @@ Bu proje, ASP.NET Core 8.0 teknolojisiyle geliştirilmiş, çok katmanlı mimari
 - Authentication & Authorization
 
   # 📽️ Portfolyo Uygulama Demosu
-  ![ ](https://raw.githubusercontent.com/Melekdmr/Core-DevProfileX/master/Media/Clipchamp-ezgif.com-video-to-gif-converter.gif)
+  ![ ](https://github.com/Melekdmr/Core-DevProfileX/blob/master/Media/Clipchamp-ezgif.com-video-to-gif-converter.gif)
   # 📽️ Yazar-Blog Paneli Görüntüleri
     Yazar Kayıt Olma
   ![ ](https://github.com/Melekdmr/Core-DevProfileX/blob/master/Media/Ekran%20g%C3%B6r%C3%BCnt%C3%BCs%C3%BC%202025-05-05%20182116.png)
